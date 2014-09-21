@@ -1,0 +1,15 @@
+{
+    "name": "mi24-vam-api",
+    "version": "0.0.1",
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/dasrick/mi24-vam-api.git"
+    },
+    "dependencies": {
+        "api-mock": "~0.1.0"
+    },
+    "devDependencies": {},
+    "engines": {
+        "node": ">=0.10.0"
+    }
+}

@@ -1,0 +1,9 @@
+# OS stuff
+.DS_Store
+
+# IDE stuff
+atlassian-ide-plugin.xml
+
+# npm stuff
+npm-debug.log
+node_modules/
