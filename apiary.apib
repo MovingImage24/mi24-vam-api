@@ -4,6 +4,26 @@ HOST: http://vmpro.eh.mi24.tv
 # vmpro
 VMPRO API is a *short texts saving* service similar to its physical paper presence on your table.
 
+
+# Group Trash
+Deleted video blah
+
+## Trash Collection [/vam/rest/vms/{videoManagerId}/trash]
+A list of all video objects in trashcan as an array of objects
+
++ Parameters
+    + videoManagerId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example value.
+
+### List all Embed Types [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "title": "properties and values of video object needed"
+        }, {
+          "id": 2, "title": "properties and values of video object needed"
+        }]
+
+
 # Group Embed Types
 Embed Types related resources of the **VMPRO API**
 
