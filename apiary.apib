@@ -5,6 +5,49 @@ HOST: http://vmpro.eh.mi24.tv
 VMPRO API is a *short texts saving* service similar to its physical paper presence on your table.
 
 
+# Group SERVICEOBJECT
+Beschreibung für das SERVICEOBJECT
+
+## Create and List of SERVICEOBJECT [/base-url]
+
+### List of existing SERVICEOBJECTs [GET]
+Use this to retrieve a list of all existing SERVICEOBJECTS
++ Response 200 (application/json)
+
+        [{"id": 1, "property": "value" }, {"id": 2, "property": "value" }]
+
+### Create new SERVICEOBJECT [POST]
+This create an new SERVICEOBJECT
++ Request (application/json)
+
+        {"property": "value" }
+
++ Response 201
+
+## Manipulate SERVICEOBJECT [/base-url/{theId}]
++ Parameters
+    + theId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example value.
+
+### Get SERVICEOBJECT [GET]
++ Response 200 (application/json)
+
+        {"id": 1, "property": "value" }
+
+### Update SERVICEOBJECT [PUT]
++ Request (application/json)
+
+        {"id": 1, "property": "newvalue" }
+
++ Response 204
+
+### Delete SERVICEOBJECT [DELETE]
++ Response 204
+
+
+
+
+
+
 # Group Trash
 Deleted video blah
 
