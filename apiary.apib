@@ -55,16 +55,17 @@ This create an new SERVICEOBJECT
 
 
 
-# Group Trash
+# Group Trash Items
 Deleted video blah
 
-## Trash Collection [/vam/rest/vms/{videoManagerId}/trash]
+
+## Trash Item Collection [/vam/rest/vms/{videoManagerId}/trash]
 A list of all video objects in trashcan as an array of objects
 
 + Parameters
     + videoManagerId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example value.
 
-### List all Embed Types [GET]
+### List all Trash Items [GET]
 + Response 200 (application/json)
 
         [{
@@ -72,6 +73,7 @@ A list of all video objects in trashcan as an array of objects
         }, {
           "id": 2, "title": "properties and values of video object needed"
         }]
+
 
 
 # Group Embed Types
@@ -90,6 +92,11 @@ A list of all Embed Types as an array of objects
           "HTML_CODE",
           "LINK_URL"
         ]
+        [{
+          "id": "HTML_CODE"
+        }, {
+          "id": "LINK_URL"
+        }]
 
 
 # Group Player Skins
