@@ -83,7 +83,6 @@ A list of all Embed Types as an array of objects
 + Parameters
     + videoManagerId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example value.
 
-
 ### List all Embed Types [GET]
 + Response 200 (application/json)
 
@@ -102,7 +101,6 @@ A list of all Player Skins as an array of objects
 + Parameters
     + videoManagerId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example value.
 
-
 ### List all Player Skins [GET]
 + Response 200 (application/json)
 
@@ -112,44 +110,11 @@ A list of all Player Skins as an array of objects
           "id": 2, "title": "Player Skin green (APIARY)"
         }]
 
-## Player Skin [/vam/rest/vms/{videoManagerId}/playerskin/{playerSkinId}]
-A single Player Skin object with all its details
-
-+ Parameters
-    + videoManagerId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example value.
-    + playerSkinId (required, number, `1`) ... Numeric `id` of the Embed Type to perform action with. Has example value.
-
-### Retrieve an Embed Type [GET]
-+ Response 200 (application/json)
-
-    + Header
-
-            X-My-Header: The Value
-
-    + Body
-
-            { "id": 2, "title": "Player Skin default (APIARY)" }
 
 
 # Group Embed Codes
 Embed Codes related resources of the **VMPRO API**
 
-## Embed Codes Collection [/vam/rest/vms/{videoManagerId}/video/{videoId}/player/{playerSkinId}/embedcode]
-A list of all Embed Codes of selected video as an array of objects
-
-+ Parameters
-    + videoManagerId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example value.
-    + videoId (required, string, `74WGsUCJ3QJMjN8-LeYFpm`) ... string `id` of the selected video to perform action with. Has example value.
-    + playerSkinId (required, number, `2`) ... Numeric `id` of the Player Skin to perform action with. Has example value.
-
-
-### List all Embed Codes [GET]
-+ Response 200 (application/json)
-
-        [
-          "HTML_CODE": "<mi24-video video-id="74WGsUCJ3QJMjN8-LeYFpm" player-id="2" config-type="vmpro" url="//d.video-cdn.net"></mi24-video><script src="//e.video-cdn.net/elfriede.js"></script>"
-          "LINK_URL": "//e.video-cdn.net/?video-id=74WGsUCJ3QJMjN8-LeYFpm&player-id=2&config-type=vmpro&url=//d.video-cdn.net"
-        ]
 
 ## Embed Code [/vam/rest/vms/{videoManagerId}/video/{videoId}/player/{playerSkinId}/embedcode/{embedTypeId}]
 A single Embed Code object with all its details
@@ -160,14 +125,10 @@ A single Embed Code object with all its details
     + playerSkinId (required, number, `2`) ... Numeric `id` of the Player Skin to perform action with. Has example value.
     + embedTypeId (required, string, `HTML_CODE`) ... string `id` of the Player Skin to perform action with. Has example value.
 
-
 ### Retrieve an Embed Code [GET]
 + Response 200 (application/json)
 
-    + Header
-
-            X-My-Header: The Value
-
-    + Body
-
-            "<mi24-video video-id="74WGsUCJ3QJMjN8-LeYFpm" player-id="2" config-type="vmpro" url="//d.video-cdn.net"></mi24-video><script src="//e.video-cdn.net/elfriede.js"></script>"
+        {
+          "id": "HTML_CODE",
+          "code": "<mi24-video video-id="74WGsUCJ3QJMjN8-LeYFpm" player-id="2" config-type="vmpro" url="//d.video-cdn.net"></mi24-video><script src="//e.video-cdn.net/elfriede.js"></script>"
+        }
