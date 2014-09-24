@@ -88,28 +88,10 @@ A list of all Embed Types as an array of objects
 + Response 200 (application/json)
 
         [{
-          "id": 1, "title": "HTML-Code (APIARY)"
+          "HTML_CODE"
         }, {
-          "id": 2, "title": "Link-URL (APIARY)"
+          "LINK_URL"
         }]
-
-## Embed Type [/vam/rest/vms/{videoManagerId}/embedtype/{embedTypeId}]
-A single Embed Type object with all its details
-
-+ Parameters
-    + videoManagerId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example value.
-    + embedTypeId (required, number, `1`) ... Numeric `id` of the Embed Type to perform action with. Has example value.
-
-### Retrieve an Embed Type [GET]
-+ Response 200 (application/json)
-
-    + Header
-
-            X-My-Header: The Value
-
-    + Body
-
-            { "id": 2, "title": "Link-URL (APIARY)" }
 
 
 # Group Player Skins
