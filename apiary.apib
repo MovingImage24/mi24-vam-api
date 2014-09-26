@@ -231,8 +231,41 @@ This creates a new Video-Manager
                 "userQuota": 25,
                 "storageQuota": 200
             },
-            transcoderProfiles: [
-                {}, {}
+            "transcodingProfiles": [
+                {
+                    "title": "480p",
+                    "videoExtension": "mp4",
+                    "stillExtension": "jpeg",
+                    "createStill": true,
+                    "video": {
+                        "codec": {
+                            "name": "h264",
+                            "properties": {
+                                "profile": "main",
+                                "preset": "fast"
+                            }
+                        },
+                        "resolution": {
+                            "width": 640,
+                            "height": 480
+                        },
+                        "keyframe": 50,
+                        "framerate": 25,
+                        "bitrate": 1250,
+                        "aspectRatio": {
+                            "width": 4,
+                            "height": 3
+                        }
+                    },
+                    "audio": {
+                        "codec": {
+                            "name": "aac",
+                            "properties": null
+                        },
+                        "bitRate": 128,
+                        "sampleRate": 44100
+                    }
+                }
             ]
         }
 
