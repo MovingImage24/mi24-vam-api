@@ -7,3 +7,5 @@ atlassian-ide-plugin.xml
 # npm stuff
 npm-debug.log
 node_modules/
+.idea/*
+*.iml

@@ -205,3 +205,52 @@ Hier können die verschienden Reports bezogen werden.
                 "value": 8
             }
         ]
+
+
+# Group Video Manager
+Get, create or update Video-Managers
+
+## Video-Managers [/vam/rest/vms]
+
+### List of existing Video-Manages [GET]
++ Response 200 (application/json)
+        
+        [{"id": 1, "name": "Video Manager 1" }, {"id": 2, "name": "Video Manager 2" }]
+
+### Create new Video-Manager [POST]
+This creates a new Video-Manager
+
++ Request (application/json)
+
+        {
+            "name": "Video Manager 3",
+            "owner": "admin@mi24.tv",
+            "company": "Customer company name",
+            "plans": {
+                "trafficQuota": 100,
+                "userQuota": 25,
+                "storageQuota": 200
+            },
+            transcoderProfiles: [
+                {}, {}
+            ]
+        }
+
++ Response 201
+
+    + Header
+        
+        Location: http://localhost:3000/vam/rest/vms/3
+                  
+## Specific Video-Manager [/vam/rest/vms/{videoManagerId}]
++ Parameters
+    + videoManagerId (required, number, `3`) ... Numeric `id` of the VideoManager to perform action with.
+
+### Get Video-Manager [GET] 
++ Response 200 (application/json)
+    
+        {
+            "id": 3,
+            "name": "Video Manager 3"
+        }
+
