@@ -288,3 +288,51 @@ This creates a new Video-Manager
             "name": "Video Manager 3"
         }
 
+# Group Transcoding Profiles
+Update or add Transcoding Profiles
+ 
+## Transcoding Profiles [/vam/rest/vms/{videoManagerId}/transcoding-profiles/{transcodingProfileKey}]
++ Parameters
+    + videoManagerId (required, number, `3`) ... Numeric `id` of the VideoManager to perform action with.
+    + transcodingProfileKey (required, string, `480p`) ... string `key` (`id`) of the Transcoding Profile to add or update.
+
+### Add new or update existing Transcoding Profile [PUT]
+ 
++ Request (application/json)
+ 
+        {
+            "key": "480p",
+            "videoExtension": "mp4",
+            "stillExtension": "jpeg",
+            "createStill": true,
+            "video": {
+                "codec": {
+                    "name": "h264",
+                    "properties": {
+                        "profile": "main",
+                        "preset": "fast"
+                    }
+                },
+                "resolution": {
+                    "width": 640,
+                    "height": 480
+                },
+                "keyframe": 50,
+                "framerate": 25,
+                "bitrate": 1250,
+                "aspectRatio": {
+                    "width": 4,
+                    "height": 3
+                }
+            },
+            "audio": {
+                "codec": {
+                    "name": "aac",
+                    "properties": null
+                },
+                "bitRate": 128,
+                "sampleRate": 44100
+            }
+        }
+
++ Response 200
