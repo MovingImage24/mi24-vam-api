@@ -336,3 +336,21 @@ Update or add Transcoding Profiles
         }
 
 + Response 200
+
+# Group Plans
+Update plans (user, traffic and storage quota).
+
+## Plans [/vam/rest/vms/{videoManagerId}/plans]
++ Parameters
+    + videoManagerId (required, number, `3`) ... Numeric `id` of the VideoManager to perform action with.
+
+### Update plans [PUT]
++ Request (application/json)
+        {
+            "trafficQuota": 200,
+            "userQuota": 50,
+            "storageQuota": 500
+        }
+
++ Response 200 Ok
+
