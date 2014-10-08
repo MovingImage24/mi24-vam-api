@@ -172,7 +172,10 @@ Hier können die verschienden Reports bezogen werden.
 ## Views [/vam/rest/vms/{videoManagerId}/statistics/report/views{?video-id,start-date,end-date}]
 + Parameters
     + videoManagerId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example value.
-
+    + video-id (required, string, `74WGsUCJ3QJMjN8-LeYFpm`) ... String `id` of the selected video to perform action with
+    + start-date (required, number, `1388530800000`) ... Numeric `value` of start date
+    + end-date (required, number, `1388530800000`) ... Numeric `value` of end date
+    
 ### Get statistics report for views [GET]
 + Response 200 (application/json)
 
@@ -191,7 +194,10 @@ Hier können die verschienden Reports bezogen werden.
 ## Plays [/vam/rest/vms/{videoManagerId}/statistics/report/plays{?video-id,start-date,end-date}]
 + Parameters
     + videoManagerId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example value.
-
+    + video-id (required, string, `74WGsUCJ3QJMjN8-LeYFpm`) ... String `id` of the selected video to perform action with
+    + start-date (required, number, `1388530800000`) ... Numeric `value` of start date
+    + end-date (required, number, `1388530800000`) ... Numeric `value` of end date
+    
 ### Get statistics report for plays [GET]
 + Response 200 (application/json)
 
@@ -442,8 +448,7 @@ Update plans (user, traffic and storage quota).
 ## Player Skin [/vam/rest/vms/{videoManagerId}/player-skins]
 
 + Parameters
-
-        + videoManagerId (number, 3) ... Numeric `id` of the VideoManager to perform action with. 
+    + videoManagerId (required, number, `3`) ... Numeric `id` of the Note to perform action with. Has example value.
 
 ### Create Player Skin [POST]
     
@@ -862,4 +867,3 @@ Update plans (user, traffic and storage quota).
             }
           
 + Response 204 (application/json)
-
