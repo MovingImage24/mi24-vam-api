@@ -228,341 +228,343 @@ This creates a new Video-Manager
 
 + Request (application/json)
 
-    +Body
+    + Body
 
-        {
-            "name": "Video Manager 3",
-            "owner": "admin@mi24.tv",
-            "company": "Customer company name",
-            "department": "Customer department name",
-            "plans": {
-                "trafficQuota": 100,
-                "userQuota": 25,
-                "storageQuota": 200
-            },
-            "transcodingProfiles": [
-                {
-                    "key": "480p",
-                    "videoExtension": "mp4",
-                    "stillExtension": "jpeg",
-                    "createStill": true,
-                    "container": {
-                        "name": "isom",
-                        "properties": {}
-                    },
-                    "video": {
-                        "codec": {
-                            "name": "h264",
+            {
+                "name": "Video Manager 3",
+                "owner": "admin@mi24.tv",
+                "company": "Customer company name",
+                "department": "Customer department name",
+                "plans": {
+                    "trafficQuota": 100,
+                    "userQuota": 25,
+                    "storageQuota": 200
+                },
+                "transcodingProfiles": [
+                    {
+                        "key": "480p",
+                        "videoExtension": "mp4",
+                        "stillExtension": "jpeg",
+                        "createStill": true,
+                        "container": {
+                            "name": "isom",
                             "properties": {}
                         },
-                        "resolution": {
-                            "width": 640,
-                            "height": 480
+                        "video": {
+                            "codec": {
+                                "name": "h264",
+                                "properties": {}
+                            },
+                            "resolution": {
+                                "width": 640,
+                                "height": 480
+                            },
+                            "keyFrame": 50,
+                            "frameRate": 25,
+                            "bitRate": 1250,
+                            "aspectRatio": {
+                                "width": 4,
+                                "height": 3
+                            }
                         },
-                        "keyFrame": 50,
-                        "frameRate": 25,
-                        "bitRate": 1250,
-                        "aspectRatio": {
-                            "width": 4,
-                            "height": 3
+                        "audio": {
+                            "codec": {
+                                "name": "aac",
+                                "properties": {}
+                            },
+                            "channels": 2,
+                            "bitRate": 128,
+                            "sampleRate": 44100
                         }
-                    },
-                    "audio": {
-                        "codec": {
-                            "name": "aac",
-                            "properties": {}
-                        },
-                        "channels": 2,
-                        "bitRate": 128,
-                        "sampleRate": 44100
                     }
-                }
-            ],
-            "playerSkins": [
-                {
-                    "name": "hrt",
-                    "skinDownloadUrl": "http://ccc.mi24.dev/skins/skin_png.1",
-                     "playButton": {
-                        "dimension": {
-                            "width": 100,
-                            "height": 100
+                ],
+                "playerSkins": [
+                    {
+                        "name": "hrt",
+                        "skinDownloadUrl": "http://ccc.mi24.dev/skins/skin_png.1",
+                         "playButton": {
+                            "dimension": {
+                                "width": 100,
+                                "height": 100
+                            },
+                            "position": {
+                                "x": 280,
+                                "y": 0
+                            }
                         },
-                        "position": {
-                            "x": 280,
-                            "y": 0
-                        }
-                    },
-                    "stopButton": {
-                        "dimension": {
-                            "width": 100,
-                            "height": 100
+                        "stopButton": {
+                            "dimension": {
+                                "width": 100,
+                                "height": 100
+                            },
+                            "position": {
+                                "x": 280,
+                                "y": 0
+                            }
                         },
-                        "position": {
-                            "x": 280,
-                            "y": 0
-                        }
-                    },
-                    "slider": {
-                      "dimension": {
-                          "width": 100,
-                          "height": 100
-                      },
-                      "position": {
-                          "x": 280,
-                          "y": 0
+                        "slider": {
+                          "dimension": {
+                              "width": 100,
+                              "height": 100
+                          },
+                          "position": {
+                              "x": 280,
+                              "y": 0
+                          }
+                        },
+                        "mute": {
+                          "dimension": {
+                              "width": 100,
+                              "height": 100
+                          },
+                          "position": {
+                              "x": 280,
+                              "y": 0
+                          }
+                        },
+                        "volume": {
+                          "dimension": {
+                              "width": 100,
+                              "height": 100
+                          },
+                          "position": {
+                              "x": 280,
+                              "y": 0
+                          }
+                        },
+                        "fullscreen": {
+                          "dimension": {
+                              "width": 100,
+                              "height": 100
+                          },
+                          "position": {
+                              "x": 280,
+                              "y": 0
+                          }
+                        },
+                        "colors": {
+                          "slider": {
+                              "text": "fff000",
+                              "progress": "fff000",
+                              "background": "fff000"
+                          },
+                          "button": {
+                              "active": "fff000",
+                              "default": "fff000",
+                              "hover": "fff000"
+                          },
+                          "background": {
+                              "default": "fff000"
+                          }
                       }
-                    },
-                    "mute": {
-                      "dimension": {
-                          "width": 100,
-                          "height": 100
-                      },
-                      "position": {
-                          "x": 280,
-                          "y": 0
-                      }
-                    },
-                    "volume": {
-                      "dimension": {
-                          "width": 100,
-                          "height": 100
-                      },
-                      "position": {
-                          "x": 280,
-                          "y": 0
-                      }
-                    },
-                    "fullscreen": {
-                      "dimension": {
-                          "width": 100,
-                          "height": 100
-                      },
-                      "position": {
-                          "x": 280,
-                          "y": 0
-                      }
-                    },
-                    "colors": {
-                      "slider": {
-                          "text": "fff000",
-                          "progress": "fff000",
-                          "background": "fff000"
-                      },
-                      "button": {
-                          "active": "fff000",
-                          "default": "fff000",
-                          "hover": "fff000"
-                      },
-                      "background": {
-                          "default": "fff000"
-                      }
-                  }
-                }
-            ]
-        }
+                    }
+                ]
+            }
         
     + Schema
-        {
-            "type": "object",
-            "$schema": "http://json-schema.org/draft-03/schema",
-            "id": "http://jsonschema.net",
-            "required": true,
-            "properties": {
-                "company": {
-                    "type": "string",
-                    "id": "http://jsonschema.net/company",
-                    "required": true
-                },
-                "department": {
-                    "type": "string",
-                    "id": "http://jsonschema.net/department",
-                    "required": true
-                },
-                "name": {
-                    "type": "string",
-                    "id": "http://jsonschema.net/name",
-                    "required": true
-                },
-                "owner": {
-                    "type": "string",
-                    "id": "http://jsonschema.net/owner",
-                    "required": true
-                },
-                "plans": {
-                    "type": "object",
-                    "id": "http://jsonschema.net/plans",
-                    "required": true,
-                    "properties": {
-                        "storageQuota": {
-                            "type": "number",
-                            "id": "http://jsonschema.net/plans/storageQuota",
-                            "required": true
-                        },
-                        "trafficQuota": {
-                            "type": "number",
-                            "id": "http://jsonschema.net/plans/trafficQuota",
-                            "required": true
-                        },
-                        "userQuota": {
-                            "type": "number",
-                            "id": "http://jsonschema.net/plans/userQuota",
-                            "required": true
-                        }
-                    }
-                },
-                "transcodingProfiles": {
-                    "type": "array",
-                    "id": "http://jsonschema.net/transcodingProfiles",
-                    "required": true,
-                    "items": {
+    
+            {
+                "type": "object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required": true,
+                "properties": {
+                    "company": {
+                        "type": "string",
+                        "id": "http://jsonschema.net/company",
+                        "required": true
+                    },
+                    "department": {
+                        "type": "string",
+                        "id": "http://jsonschema.net/department",
+                        "required": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "id": "http://jsonschema.net/name",
+                        "required": true
+                    },
+                    "owner": {
+                        "type": "string",
+                        "id": "http://jsonschema.net/owner",
+                        "required": true
+                    },
+                    "plans": {
                         "type": "object",
-                        "id": "http://jsonschema.net/transcodingProfiles/0",
+                        "id": "http://jsonschema.net/plans",
                         "required": true,
                         "properties": {
-                            "audio": {
-                                "type": "object",
-                                "id": "http://jsonschema.net/transcodingProfiles/0/audio",
-                                "required": true,
-                                "properties": {
-                                    "bitRate": {
-                                        "type": "number",
-                                        "id": "http://jsonschema.net/transcodingProfiles/0/audio/bitRate",
-                                        "required": true
-                                    },
-                                    "channels": {
-                                        "type": "number",
-                                        "id": "http://jsonschema.net/transcodingProfiles/0/audio/channels",
-                                        "required": true
-                                    },
-                                    "codec": {
-                                        "type": "object",
-                                        "id": "http://jsonschema.net/transcodingProfiles/0/audio/codec",
-                                        "required": true,
-                                        "properties": {
-                                            "name": {
-                                                "type": "string",
-                                                "id": "http://jsonschema.net/transcodingProfiles/0/audio/codec/name",
-                                                "required": true
-                                            },
-                                            "properties": {
-                                                "type": "object",
-                                                "id": "http://jsonschema.net/transcodingProfiles/0/audio/codec/properties",
-                                                "required": true
-                                            }
-                                        }
-                                    },
-                                    "sampleRate": {
-                                        "type": "number",
-                                        "id": "http://jsonschema.net/transcodingProfiles/0/audio/sampleRate",
-                                        "required": true
-                                    }
-                                }
+                            "storageQuota": {
+                                "type": "number",
+                                "id": "http://jsonschema.net/plans/storageQuota",
+                                "required": true
                             },
-                            "container": {
-                                "type": "object",
-                                "id": "http://jsonschema.net/transcodingProfiles/0/container",
-                                "required": true,
-                                "properties": {
-                                    "name": {
-                                        "type": "string",
-                                        "id": "http://jsonschema.net/transcodingProfiles/0/container/name",
-                                        "required": true
-                                    },
+                            "trafficQuota": {
+                                "type": "number",
+                                "id": "http://jsonschema.net/plans/trafficQuota",
+                                "required": true
+                            },
+                            "userQuota": {
+                                "type": "number",
+                                "id": "http://jsonschema.net/plans/userQuota",
+                                "required": true
+                            }
+                        }
+                    },
+                    "transcodingProfiles": {
+                        "type": "array",
+                        "id": "http://jsonschema.net/transcodingProfiles",
+                        "required": true,
+                        "items": {
+                            "type": "object",
+                            "id": "http://jsonschema.net/transcodingProfiles/0",
+                            "required": true,
+                            "properties": {
+                                "audio": {
+                                    "type": "object",
+                                    "id": "http://jsonschema.net/transcodingProfiles/0/audio",
+                                    "required": true,
                                     "properties": {
-                                        "type": "object",
-                                        "id": "http://jsonschema.net/transcodingProfiles/0/container/properties",
-                                        "required": true
-                                    }
-                                }
-                            },
-                            "createStill": {
-                                "type": "boolean",
-                                "id": "http://jsonschema.net/transcodingProfiles/0/createStill",
-                                "required": true
-                            },
-                            "key": {
-                                "type": "string",
-                                "id": "http://jsonschema.net/transcodingProfiles/0/key",
-                                "required": true
-                            },
-                            "stillExtension": {
-                                "type": "string",
-                                "id": "http://jsonschema.net/transcodingProfiles/0/stillExtension",
-                                "required": true
-                            },
-                            "videoExtension": {
-                                "type": "string",
-                                "id": "http://jsonschema.net/transcodingProfiles/0/videoExtension",
-                                "required": true
-                            },
-                            "video": {
-                                "type": "object",
-                                "id": "http://jsonschema.net/transcodingProfiles/0/video",
-                                "required": true,
-                                "properties": {
-                                    "aspectRatio": {
-                                        "type": "object",
-                                        "id": "http://jsonschema.net/transcodingProfiles/0/video/aspectRatio",
-                                        "required": true,
-                                        "properties": {
-                                            "height": {
-                                                "type": "number",
-                                                "id": "http://jsonschema.net/transcodingProfiles/0/video/aspectRatio/height",
-                                                "required": true
-                                            },
-                                            "width": {
-                                                "type": "number",
-                                                "id": "http://jsonschema.net/transcodingProfiles/0/video/aspectRatio/width",
-                                                "required": true
-                                            }
-                                        }
-                                    },
-                                    "bitRate": {
-                                        "type": "number",
-                                        "id": "http://jsonschema.net/transcodingProfiles/0/video/bitRate",
-                                        "required": true
-                                    },
-                                    "codec": {
-                                        "type": "object",
-                                        "id": "http://jsonschema.net/transcodingProfiles/0/video/codec",
-                                        "required": true,
-                                        "properties": {
-                                            "name": {
-                                                "type": "string",
-                                                "id": "http://jsonschema.net/transcodingProfiles/0/video/codec/name",
-                                                "required": true
-                                            },
+                                        "bitRate": {
+                                            "type": "number",
+                                            "id": "http://jsonschema.net/transcodingProfiles/0/audio/bitRate",
+                                            "required": true
+                                        },
+                                        "channels": {
+                                            "type": "number",
+                                            "id": "http://jsonschema.net/transcodingProfiles/0/audio/channels",
+                                            "required": true
+                                        },
+                                        "codec": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/transcodingProfiles/0/audio/codec",
+                                            "required": true,
                                             "properties": {
-                                                "type": "object",
-                                                "id": "http://jsonschema.net/transcodingProfiles/0/video/codec/properties",
-                                                "required": true
+                                                "name": {
+                                                    "type": "string",
+                                                    "id": "http://jsonschema.net/transcodingProfiles/0/audio/codec/name",
+                                                    "required": true
+                                                },
+                                                "properties": {
+                                                    "type": "object",
+                                                    "id": "http://jsonschema.net/transcodingProfiles/0/audio/codec/properties",
+                                                    "required": true
+                                                }
                                             }
+                                        },
+                                        "sampleRate": {
+                                            "type": "number",
+                                            "id": "http://jsonschema.net/transcodingProfiles/0/audio/sampleRate",
+                                            "required": true
                                         }
-                                    },
-                                    "frameRate": {
-                                        "type": "number",
-                                        "id": "http://jsonschema.net/transcodingProfiles/0/video/frameRate",
-                                        "required": true
-                                    },
-                                    "keyFrame": {
-                                        "type": "number",
-                                        "id": "http://jsonschema.net/transcodingProfiles/0/video/keyFrame",
-                                        "required": true
-                                    },
-                                    "resolution": {
-                                        "type": "object",
-                                        "id": "http://jsonschema.net/transcodingProfiles/0/video/resolution",
-                                        "required": true,
+                                    }
+                                },
+                                "container": {
+                                    "type": "object",
+                                    "id": "http://jsonschema.net/transcodingProfiles/0/container",
+                                    "required": true,
+                                    "properties": {
+                                        "name": {
+                                            "type": "string",
+                                            "id": "http://jsonschema.net/transcodingProfiles/0/container/name",
+                                            "required": true
+                                        },
                                         "properties": {
-                                            "height": {
-                                                "type": "number",
-                                                "id": "http://jsonschema.net/transcodingProfiles/0/video/resolution/height",
-                                                "required": true
-                                            },
-                                            "width": {
-                                                "type": "number",
-                                                "id": "http://jsonschema.net/transcodingProfiles/0/video/resolution/width",
-                                                "required": true
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/transcodingProfiles/0/container/properties",
+                                            "required": true
+                                        }
+                                    }
+                                },
+                                "createStill": {
+                                    "type": "boolean",
+                                    "id": "http://jsonschema.net/transcodingProfiles/0/createStill",
+                                    "required": true
+                                },
+                                "key": {
+                                    "type": "string",
+                                    "id": "http://jsonschema.net/transcodingProfiles/0/key",
+                                    "required": true
+                                },
+                                "stillExtension": {
+                                    "type": "string",
+                                    "id": "http://jsonschema.net/transcodingProfiles/0/stillExtension",
+                                    "required": true
+                                },
+                                "videoExtension": {
+                                    "type": "string",
+                                    "id": "http://jsonschema.net/transcodingProfiles/0/videoExtension",
+                                    "required": true
+                                },
+                                "video": {
+                                    "type": "object",
+                                    "id": "http://jsonschema.net/transcodingProfiles/0/video",
+                                    "required": true,
+                                    "properties": {
+                                        "aspectRatio": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/transcodingProfiles/0/video/aspectRatio",
+                                            "required": true,
+                                            "properties": {
+                                                "height": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/transcodingProfiles/0/video/aspectRatio/height",
+                                                    "required": true
+                                                },
+                                                "width": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/transcodingProfiles/0/video/aspectRatio/width",
+                                                    "required": true
+                                                }
+                                            }
+                                        },
+                                        "bitRate": {
+                                            "type": "number",
+                                            "id": "http://jsonschema.net/transcodingProfiles/0/video/bitRate",
+                                            "required": true
+                                        },
+                                        "codec": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/transcodingProfiles/0/video/codec",
+                                            "required": true,
+                                            "properties": {
+                                                "name": {
+                                                    "type": "string",
+                                                    "id": "http://jsonschema.net/transcodingProfiles/0/video/codec/name",
+                                                    "required": true
+                                                },
+                                                "properties": {
+                                                    "type": "object",
+                                                    "id": "http://jsonschema.net/transcodingProfiles/0/video/codec/properties",
+                                                    "required": true
+                                                }
+                                            }
+                                        },
+                                        "frameRate": {
+                                            "type": "number",
+                                            "id": "http://jsonschema.net/transcodingProfiles/0/video/frameRate",
+                                            "required": true
+                                        },
+                                        "keyFrame": {
+                                            "type": "number",
+                                            "id": "http://jsonschema.net/transcodingProfiles/0/video/keyFrame",
+                                            "required": true
+                                        },
+                                        "resolution": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/transcodingProfiles/0/video/resolution",
+                                            "required": true,
+                                            "properties": {
+                                                "height": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/transcodingProfiles/0/video/resolution/height",
+                                                    "required": true
+                                                },
+                                                "width": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/transcodingProfiles/0/video/resolution/width",
+                                                    "required": true
+                                                }
                                             }
                                         }
                                     }
@@ -572,7 +574,6 @@ This creates a new Video-Manager
                     }
                 }
             }
-        }
 
 
 + Response 201
@@ -607,217 +608,217 @@ Update or add Transcoding Profiles
     
     + Body
      
-        {
-            "key": "480p",
-            "videoExtension": "mp4",
-            "stillExtension": "jpeg",
-            "createStill": true,
-            "container": {
-                "name": "isom",
-                "properties": {}
-            },
-            "video": {
-                "codec": {
-                    "name": "h264",
-                    "properties": {
-                        "profile": "main",
-                        "preset": "fast"
+            {
+                "key": "480p",
+                "videoExtension": "mp4",
+                "stillExtension": "jpeg",
+                "createStill": true,
+                "container": {
+                    "name": "isom",
+                    "properties": {}
+                },
+                "video": {
+                    "codec": {
+                        "name": "h264",
+                        "properties": {
+                            "profile": "main",
+                            "preset": "fast"
+                        }
+                    },
+                    "resolution": {
+                        "width": 640,
+                        "height": 480
+                    },
+                    "keyFrame": 50,
+                    "frameRate": 25,
+                    "bitRate": 1250,
+                    "aspectRatio": {
+                        "width": 4,
+                        "height": 3
                     }
                 },
-                "resolution": {
-                    "width": 640,
-                    "height": 480
-                },
-                "keyFrame": 50,
-                "frameRate": 25,
-                "bitRate": 1250,
-                "aspectRatio": {
-                    "width": 4,
-                    "height": 3
+                "audio": {
+                    "codec": {
+                        "name": "aac",
+                        "properties": null
+                    },
+                    "channels": 2,
+                    "bitRate": 128,
+                    "sampleRate": 44100
                 }
-            },
-            "audio": {
-                "codec": {
-                    "name": "aac",
-                    "properties": null
-                },
-                "channels": 2,
-                "bitRate": 128,
-                "sampleRate": 44100
             }
-        }
 
     + Schema 
         
-        {
-            "type": "object",
-            "$schema": "http://json-schema.org/draft-03/schema",
-            "id": "http://jsonschema.net",
-            "required": true,
-            "properties": {
-                "audio": {
-                    "type": "object",
-                    "id": "http://jsonschema.net/audio",
-                    "required": true,
-                    "properties": {
-                        "bitRate": {
-                            "type": "number",
-                            "id": "http://jsonschema.net/audio/bitRate",
-                            "required": true
-                        },
-                        "channels": {
-                            "type": "number",
-                            "id": "http://jsonschema.net/audio/channels",
-                            "required": true
-                        },
-                        "codec": {
-                            "type": "object",
-                            "id": "http://jsonschema.net/audio/codec",
-                            "required": true,
-                            "properties": {
-                                "name": {
-                                    "type": "string",
-                                    "id": "http://jsonschema.net/audio/codec/name",
-                                    "required": true
-                                },
-                                "properties": {
-                                    "type": "null",
-                                    "id": "http://jsonschema.net/audio/codec/properties",
-                                    "required": true
-                                }
-                            }
-                        },
-                        "sampleRate": {
-                            "type": "number",
-                            "id": "http://jsonschema.net/audio/sampleRate",
-                            "required": true
-                        }
-                    }
-                },
-                "container": {
-                    "type": "object",
-                    "id": "http://jsonschema.net/container",
-                    "required": true,
-                    "properties": {
-                        "name": {
-                            "type": "string",
-                            "id": "http://jsonschema.net/container/name",
-                            "required": true
-                        },
+            {
+                "type": "object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required": true,
+                "properties": {
+                    "audio": {
+                        "type": "object",
+                        "id": "http://jsonschema.net/audio",
+                        "required": true,
                         "properties": {
-                            "type": "object",
-                            "id": "http://jsonschema.net/container/properties",
-                            "required": true
-                        }
-                    }
-                },
-                "createStill": {
-                    "type": "boolean",
-                    "id": "http://jsonschema.net/createStill",
-                    "required": true
-                },
-                "key": {
-                    "type": "string",
-                    "id": "http://jsonschema.net/key",
-                    "required": true
-                },
-                "stillExtension": {
-                    "type": "string",
-                    "id": "http://jsonschema.net/stillExtension",
-                    "required": true
-                },
-                "videoExtension": {
-                    "type": "string",
-                    "id": "http://jsonschema.net/videoExtension",
-                    "required": true
-                },
-                "video": {
-                    "type": "object",
-                    "id": "http://jsonschema.net/video",
-                    "required": true,
-                    "properties": {
-                        "aspectRatio": {
-                            "type": "object",
-                            "id": "http://jsonschema.net/video/aspectRatio",
-                            "required": true,
-                            "properties": {
-                                "height": {
-                                    "type": "number",
-                                    "id": "http://jsonschema.net/video/aspectRatio/height",
-                                    "required": true
-                                },
-                                "width": {
-                                    "type": "number",
-                                    "id": "http://jsonschema.net/video/aspectRatio/width",
-                                    "required": true
-                                }
-                            }
-                        },
-                        "bitRate": {
-                            "type": "number",
-                            "id": "http://jsonschema.net/video/bitRate",
-                            "required": true
-                        },
-                        "codec": {
-                            "type": "object",
-                            "id": "http://jsonschema.net/video/codec",
-                            "required": true,
-                            "properties": {
-                                "name": {
-                                    "type": "string",
-                                    "id": "http://jsonschema.net/video/codec/name",
-                                    "required": true
-                                },
+                            "bitRate": {
+                                "type": "number",
+                                "id": "http://jsonschema.net/audio/bitRate",
+                                "required": true
+                            },
+                            "channels": {
+                                "type": "number",
+                                "id": "http://jsonschema.net/audio/channels",
+                                "required": true
+                            },
+                            "codec": {
+                                "type": "object",
+                                "id": "http://jsonschema.net/audio/codec",
+                                "required": true,
                                 "properties": {
-                                    "type": "object",
-                                    "id": "http://jsonschema.net/video/codec/properties",
-                                    "required": true,
+                                    "name": {
+                                        "type": "string",
+                                        "id": "http://jsonschema.net/audio/codec/name",
+                                        "required": true
+                                    },
                                     "properties": {
-                                        "preset": {
-                                            "type": "string",
-                                            "id": "http://jsonschema.net/video/codec/properties/preset",
-                                            "required": true
-                                        },
-                                        "profile": {
-                                            "type": "string",
-                                            "id": "http://jsonschema.net/video/codec/properties/profile",
-                                            "required": true
+                                        "type": "null",
+                                        "id": "http://jsonschema.net/audio/codec/properties",
+                                        "required": true
+                                    }
+                                }
+                            },
+                            "sampleRate": {
+                                "type": "number",
+                                "id": "http://jsonschema.net/audio/sampleRate",
+                                "required": true
+                            }
+                        }
+                    },
+                    "container": {
+                        "type": "object",
+                        "id": "http://jsonschema.net/container",
+                        "required": true,
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "id": "http://jsonschema.net/container/name",
+                                "required": true
+                            },
+                            "properties": {
+                                "type": "object",
+                                "id": "http://jsonschema.net/container/properties",
+                                "required": true
+                            }
+                        }
+                    },
+                    "createStill": {
+                        "type": "boolean",
+                        "id": "http://jsonschema.net/createStill",
+                        "required": true
+                    },
+                    "key": {
+                        "type": "string",
+                        "id": "http://jsonschema.net/key",
+                        "required": true
+                    },
+                    "stillExtension": {
+                        "type": "string",
+                        "id": "http://jsonschema.net/stillExtension",
+                        "required": true
+                    },
+                    "videoExtension": {
+                        "type": "string",
+                        "id": "http://jsonschema.net/videoExtension",
+                        "required": true
+                    },
+                    "video": {
+                        "type": "object",
+                        "id": "http://jsonschema.net/video",
+                        "required": true,
+                        "properties": {
+                            "aspectRatio": {
+                                "type": "object",
+                                "id": "http://jsonschema.net/video/aspectRatio",
+                                "required": true,
+                                "properties": {
+                                    "height": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/video/aspectRatio/height",
+                                        "required": true
+                                    },
+                                    "width": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/video/aspectRatio/width",
+                                        "required": true
+                                    }
+                                }
+                            },
+                            "bitRate": {
+                                "type": "number",
+                                "id": "http://jsonschema.net/video/bitRate",
+                                "required": true
+                            },
+                            "codec": {
+                                "type": "object",
+                                "id": "http://jsonschema.net/video/codec",
+                                "required": true,
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "id": "http://jsonschema.net/video/codec/name",
+                                        "required": true
+                                    },
+                                    "properties": {
+                                        "type": "object",
+                                        "id": "http://jsonschema.net/video/codec/properties",
+                                        "required": true,
+                                        "properties": {
+                                            "preset": {
+                                                "type": "string",
+                                                "id": "http://jsonschema.net/video/codec/properties/preset",
+                                                "required": true
+                                            },
+                                            "profile": {
+                                                "type": "string",
+                                                "id": "http://jsonschema.net/video/codec/properties/profile",
+                                                "required": true
+                                            }
                                         }
                                     }
                                 }
-                            }
-                        },
-                        "frameRate": {
-                            "type": "number",
-                            "id": "http://jsonschema.net/video/frameRate",
-                            "required": true
-                        },
-                        "keyFrame": {
-                            "type": "number",
-                            "id": "http://jsonschema.net/video/keyFrame",
-                            "required": true
-                        },
-                        "resolution": {
-                            "type": "object",
-                            "id": "http://jsonschema.net/video/resolution",
-                            "required": true,
-                            "properties": {
-                                "height": {
-                                    "type": "number",
-                                    "id": "http://jsonschema.net/video/resolution/height",
-                                    "required": true
-                                },
-                                "width": {
-                                    "type": "number",
-                                    "id": "http://jsonschema.net/video/resolution/width",
-                                    "required": true
+                            },
+                            "frameRate": {
+                                "type": "number",
+                                "id": "http://jsonschema.net/video/frameRate",
+                                "required": true
+                            },
+                            "keyFrame": {
+                                "type": "number",
+                                "id": "http://jsonschema.net/video/keyFrame",
+                                "required": true
+                            },
+                            "resolution": {
+                                "type": "object",
+                                "id": "http://jsonschema.net/video/resolution",
+                                "required": true,
+                                "properties": {
+                                    "height": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/video/resolution/height",
+                                        "required": true
+                                    },
+                                    "width": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/video/resolution/width",
+                                        "required": true
+                                    }
                                 }
                             }
                         }
                     }
                 }
             }
-        }
 
 + Response 200
 
@@ -833,39 +834,39 @@ Update plans (user, traffic and storage quota).
     
     + Body        
     
-        {
-            "trafficQuota": 200,
-            "userQuota": 50,
-            "storageQuota": 500
-        }
+            {
+                "trafficQuota": 200,
+                "userQuota": 50,
+                "storageQuota": 500
+            }
         
     + Schema 
         
-        {
-            "type": "object",
-            "$schema": "http://json-schema.org/draft-03/schema",
-            "id": "http://jsonschema.net",
-            "required": true,
-            "properties": {
-                "storageQuota": {
-                    "type": "number",
-                    "id": "http://jsonschema.net/storageQuota",
-                    "required": true
-                },
-                "trafficQuota": {
-                    "type": "number",
-                    "id": "http://jsonschema.net/trafficQuota",
-                    "required": true
-                },
-                "userQuota": {
-                    "type": "number",
-                    "id": "http://jsonschema.net/userQuota",
-                    "required": true
+            {
+                "type": "object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required": true,
+                "properties": {
+                    "storageQuota": {
+                        "type": "number",
+                        "id": "http://jsonschema.net/storageQuota",
+                        "required": true
+                    },
+                    "trafficQuota": {
+                        "type": "number",
+                        "id": "http://jsonschema.net/trafficQuota",
+                        "required": true
+                    },
+                    "userQuota": {
+                        "type": "number",
+                        "id": "http://jsonschema.net/userQuota",
+                        "required": true
+                    }
                 }
             }
-        }
         
-+ Response 200 Ok
++ Response 200
 
 # Group Player Skin
 
