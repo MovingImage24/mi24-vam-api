@@ -956,6 +956,17 @@ Update plans (user, traffic and storage quota).
                       "y": 0
                   }
               },
+               "bigPlayButton": {
+                   "customButton": false,
+                   "dimension": {
+                       "width": 100,
+                       "height": 100
+                   },
+                   "position": {
+                       "x": 280,
+                       "y": 0
+                   }
+               },
               "colors": {
                   "slider": {
                       "text": "fff000",
@@ -976,331 +987,377 @@ Update plans (user, traffic and storage quota).
     + Schema
     
             {
-              "type": "object",
-              "$schema": "http://json-schema.org/draft-03/schema",
-              "id": "http://jsonschema.net",
-              "required": true,
-              "properties": {
-                  "colors": {
-                      "type": "object",
-                      "id": "http://jsonschema.net/colors",
-                      "required": true,
-                      "properties": {
-                          "background": {
-                              "type": "object",
-                              "id": "http://jsonschema.net/colors/background",
-                              "required": true,
-                              "properties": {
-                                  "default": {
-                                      "type": "string",
-                                      "id": "http://jsonschema.net/colors/background/default",
-                                      "required": true
-                                  }
-                              }
-                          },
-                          "button": {
-                              "type": "object",
-                              "id": "http://jsonschema.net/colors/button",
-                              "required": true,
-                              "properties": {
-                                  "active": {
-                                      "type": "string",
-                                      "id": "http://jsonschema.net/colors/button/active",
-                                      "required": true
-                                  },
-                                  "default": {
-                                      "type": "string",
-                                      "id": "http://jsonschema.net/colors/button/default",
-                                      "required": true
-                                  },
-                                  "hover": {
-                                      "type": "string",
-                                      "id": "http://jsonschema.net/colors/button/hover",
-                                      "required": true
-                                  }
-                              }
-                          },
-                          "slider": {
-                              "type": "object",
-                              "id": "http://jsonschema.net/colors/slider",
-                              "required": true,
-                              "properties": {
-                                  "background": {
-                                      "type": "string",
-                                      "id": "http://jsonschema.net/colors/slider/background",
-                                      "required": true
-                                  },
-                                  "progress": {
-                                      "type": "string",
-                                      "id": "http://jsonschema.net/colors/slider/progress",
-                                      "required": true
-                                  },
-                                  "text": {
-                                      "type": "string",
-                                      "id": "http://jsonschema.net/colors/slider/text",
-                                      "required": true
-                                  }
-                              }
-                          }
-                      }
-                  },
-                  "fullscreen": {
-                      "type": "object",
-                      "id": "http://jsonschema.net/fullscreen",
-                      "required": true,
-                      "properties": {
-                          "dimension": {
-                              "type": "object",
-                              "id": "http://jsonschema.net/fullscreen/dimension",
-                              "required": true,
-                              "properties": {
-                                  "height": {
-                                      "type": "number",
-                                      "id": "http://jsonschema.net/fullscreen/dimension/height",
-                                      "required": true
-                                  },
-                                  "width": {
-                                      "type": "number",
-                                      "id": "http://jsonschema.net/fullscreen/dimension/width",
-                                      "required": true
-                                  }
-                              }
-                          },
-                          "position": {
-                              "type": "object",
-                              "id": "http://jsonschema.net/fullscreen/position",
-                              "required": true,
-                              "properties": {
-                                  "x": {
-                                      "type": "number",
-                                      "id": "http://jsonschema.net/fullscreen/position/x",
-                                      "required": true
-                                  },
-                                  "y": {
-                                      "type": "number",
-                                      "id": "http://jsonschema.net/fullscreen/position/y",
-                                      "required": true
-                                  }
-                              }
-                          }
-                      }
-                  },
-                  "mute": {
-                      "type": "object",
-                      "id": "http://jsonschema.net/mute",
-                      "required": true,
-                      "properties": {
-                          "dimension": {
-                              "type": "object",
-                              "id": "http://jsonschema.net/mute/dimension",
-                              "required": true,
-                              "properties": {
-                                  "height": {
-                                      "type": "number",
-                                      "id": "http://jsonschema.net/mute/dimension/height",
-                                      "required": true
-                                  },
-                                  "width": {
-                                      "type": "number",
-                                      "id": "http://jsonschema.net/mute/dimension/width",
-                                      "required": true
-                                  }
-                              }
-                          },
-                          "position": {
-                              "type": "object",
-                              "id": "http://jsonschema.net/mute/position",
-                              "required": true,
-                              "properties": {
-                                  "x": {
-                                      "type": "number",
-                                      "id": "http://jsonschema.net/mute/position/x",
-                                      "required": true
-                                  },
-                                  "y": {
-                                      "type": "number",
-                                      "id": "http://jsonschema.net/mute/position/y",
-                                      "required": true
-                                  }
-                              }
-                          }
-                      }
-                  },
-                  "name": {
-                      "type": "string",
-                      "id": "http://jsonschema.net/name",
-                      "required": true
-                  },
-                  "playButton": {
-                      "type": "object",
-                      "id": "http://jsonschema.net/playButton",
-                      "required": true,
-                      "properties": {
-                          "dimension": {
-                              "type": "object",
-                              "id": "http://jsonschema.net/playButton/dimension",
-                              "required": true,
-                              "properties": {
-                                  "height": {
-                                      "type": "number",
-                                      "id": "http://jsonschema.net/playButton/dimension/height",
-                                      "required": true
-                                  },
-                                  "width": {
-                                      "type": "number",
-                                      "id": "http://jsonschema.net/playButton/dimension/width",
-                                      "required": true
-                                  }
-                              }
-                          },
-                          "position": {
-                              "type": "object",
-                              "id": "http://jsonschema.net/playButton/position",
-                              "required": true,
-                              "properties": {
-                                  "x": {
-                                      "type": "number",
-                                      "id": "http://jsonschema.net/playButton/position/x",
-                                      "required": true
-                                  },
-                                  "y": {
-                                      "type": "number",
-                                      "id": "http://jsonschema.net/playButton/position/y",
-                                      "required": true
-                                  }
-                              }
-                          }
-                      }
-                  },
-                  "skinDownloadUrl": {
-                      "type": "string",
-                      "id": "http://jsonschema.net/skinDownloadUrl",
-                      "required": true
-                  },
-                  "slider": {
-                      "type": "object",
-                      "id": "http://jsonschema.net/slider",
-                      "required": true,
-                      "properties": {
-                          "dimension": {
-                              "type": "object",
-                              "id": "http://jsonschema.net/slider/dimension",
-                              "required": true,
-                              "properties": {
-                                  "height": {
-                                      "type": "number",
-                                      "id": "http://jsonschema.net/slider/dimension/height",
-                                      "required": true
-                                  },
-                                  "width": {
-                                      "type": "number",
-                                      "id": "http://jsonschema.net/slider/dimension/width",
-                                      "required": true
-                                  }
-                              }
-                          },
-                          "position": {
-                              "type": "object",
-                              "id": "http://jsonschema.net/slider/position",
-                              "required": true,
-                              "properties": {
-                                  "x": {
-                                      "type": "number",
-                                      "id": "http://jsonschema.net/slider/position/x",
-                                      "required": true
-                                  },
-                                  "y": {
-                                      "type": "number",
-                                      "id": "http://jsonschema.net/slider/position/y",
-                                      "required": true
-                                  }
-                              }
-                          }
-                      }
-                  },
-                  "stopButton": {
-                      "type": "object",
-                      "id": "http://jsonschema.net/stopButton",
-                      "required": true,
-                      "properties": {
-                          "dimension": {
-                              "type": "object",
-                              "id": "http://jsonschema.net/stopButton/dimension",
-                              "required": true,
-                              "properties": {
-                                  "height": {
-                                      "type": "number",
-                                      "id": "http://jsonschema.net/stopButton/dimension/height",
-                                      "required": true
-                                  },
-                                  "width": {
-                                      "type": "number",
-                                      "id": "http://jsonschema.net/stopButton/dimension/width",
-                                      "required": true
-                                  }
-                              }
-                          },
-                          "position": {
-                              "type": "object",
-                              "id": "http://jsonschema.net/stopButton/position",
-                              "required": true,
-                              "properties": {
-                                  "x": {
-                                      "type": "number",
-                                      "id": "http://jsonschema.net/stopButton/position/x",
-                                      "required": true
-                                  },
-                                  "y": {
-                                      "type": "number",
-                                      "id": "http://jsonschema.net/stopButton/position/y",
-                                      "required": true
-                                  }
-                              }
-                          }
-                      }
-                  },
-                  "volume": {
-                      "type": "object",
-                      "id": "http://jsonschema.net/volume",
-                      "required": true,
-                      "properties": {
-                          "dimension": {
-                              "type": "object",
-                              "id": "http://jsonschema.net/volume/dimension",
-                              "required": true,
-                              "properties": {
-                                  "height": {
-                                      "type": "number",
-                                      "id": "http://jsonschema.net/volume/dimension/height",
-                                      "required": true
-                                  },
-                                  "width": {
-                                      "type": "number",
-                                      "id": "http://jsonschema.net/volume/dimension/width",
-                                      "required": true
-                                  }
-                              }
-                          },
-                          "position": {
-                              "type": "object",
-                              "id": "http://jsonschema.net/volume/position",
-                              "required": true,
-                              "properties": {
-                                  "x": {
-                                      "type": "number",
-                                      "id": "http://jsonschema.net/volume/position/x",
-                                      "required": true
-                                  },
-                                  "y": {
-                                      "type": "number",
-                                      "id": "http://jsonschema.net/volume/position/y",
-                                      "required": true
-                                  }
-                              }
-                          }
-                      }
-                  }
-              }
+                "type": "object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required": true,
+                "properties": {
+                    "bigPlayButton": {
+                        "type": "object",
+                        "id": "http://jsonschema.net/bigPlayButton",
+                        "required": true,
+                        "properties": {
+                            "customButton": {
+                                "type": "boolean",
+                                "id": "http://jsonschema.net/bigPlayButton/customButton",
+                                "required": true
+                            },
+                            "dimension": {
+                                "type": "object",
+                                "id": "http://jsonschema.net/bigPlayButton/dimension",
+                                "required": true,
+                                "properties": {
+                                    "height": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/bigPlayButton/dimension/height",
+                                        "required": true
+                                    },
+                                    "width": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/bigPlayButton/dimension/width",
+                                        "required": true
+                                    }
+                                }
+                            },
+                            "position": {
+                                "type": "object",
+                                "id": "http://jsonschema.net/bigPlayButton/position",
+                                "required": true,
+                                "properties": {
+                                    "x": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/bigPlayButton/position/x",
+                                        "required": true
+                                    },
+                                    "y": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/bigPlayButton/position/y",
+                                        "required": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "colors": {
+                        "type": "object",
+                        "id": "http://jsonschema.net/colors",
+                        "required": true,
+                        "properties": {
+                            "background": {
+                                "type": "object",
+                                "id": "http://jsonschema.net/colors/background",
+                                "required": true,
+                                "properties": {
+                                    "default": {
+                                        "type": "string",
+                                        "id": "http://jsonschema.net/colors/background/default",
+                                        "required": true
+                                    }
+                                }
+                            },
+                            "button": {
+                                "type": "object",
+                                "id": "http://jsonschema.net/colors/button",
+                                "required": true,
+                                "properties": {
+                                    "active": {
+                                        "type": "string",
+                                        "id": "http://jsonschema.net/colors/button/active",
+                                        "required": true
+                                    },
+                                    "default": {
+                                        "type": "string",
+                                        "id": "http://jsonschema.net/colors/button/default",
+                                        "required": true
+                                    },
+                                    "hover": {
+                                        "type": "string",
+                                        "id": "http://jsonschema.net/colors/button/hover",
+                                        "required": true
+                                    }
+                                }
+                            },
+                            "slider": {
+                                "type": "object",
+                                "id": "http://jsonschema.net/colors/slider",
+                                "required": true,
+                                "properties": {
+                                    "background": {
+                                        "type": "string",
+                                        "id": "http://jsonschema.net/colors/slider/background",
+                                        "required": true
+                                    },
+                                    "progress": {
+                                        "type": "string",
+                                        "id": "http://jsonschema.net/colors/slider/progress",
+                                        "required": true
+                                    },
+                                    "text": {
+                                        "type": "string",
+                                        "id": "http://jsonschema.net/colors/slider/text",
+                                        "required": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "fullscreen": {
+                        "type": "object",
+                        "id": "http://jsonschema.net/fullscreen",
+                        "required": true,
+                        "properties": {
+                            "dimension": {
+                                "type": "object",
+                                "id": "http://jsonschema.net/fullscreen/dimension",
+                                "required": true,
+                                "properties": {
+                                    "height": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/fullscreen/dimension/height",
+                                        "required": true
+                                    },
+                                    "width": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/fullscreen/dimension/width",
+                                        "required": true
+                                    }
+                                }
+                            },
+                            "position": {
+                                "type": "object",
+                                "id": "http://jsonschema.net/fullscreen/position",
+                                "required": true,
+                                "properties": {
+                                    "x": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/fullscreen/position/x",
+                                        "required": true
+                                    },
+                                    "y": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/fullscreen/position/y",
+                                        "required": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "mute": {
+                        "type": "object",
+                        "id": "http://jsonschema.net/mute",
+                        "required": true,
+                        "properties": {
+                            "dimension": {
+                                "type": "object",
+                                "id": "http://jsonschema.net/mute/dimension",
+                                "required": true,
+                                "properties": {
+                                    "height": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/mute/dimension/height",
+                                        "required": true
+                                    },
+                                    "width": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/mute/dimension/width",
+                                        "required": true
+                                    }
+                                }
+                            },
+                            "position": {
+                                "type": "object",
+                                "id": "http://jsonschema.net/mute/position",
+                                "required": true,
+                                "properties": {
+                                    "x": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/mute/position/x",
+                                        "required": true
+                                    },
+                                    "y": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/mute/position/y",
+                                        "required": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": {
+                        "type": "string",
+                        "id": "http://jsonschema.net/name",
+                        "required": true
+                    },
+                    "playButton": {
+                        "type": "object",
+                        "id": "http://jsonschema.net/playButton",
+                        "required": true,
+                        "properties": {
+                            "dimension": {
+                                "type": "object",
+                                "id": "http://jsonschema.net/playButton/dimension",
+                                "required": true,
+                                "properties": {
+                                    "height": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/playButton/dimension/height",
+                                        "required": true
+                                    },
+                                    "width": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/playButton/dimension/width",
+                                        "required": true
+                                    }
+                                }
+                            },
+                            "position": {
+                                "type": "object",
+                                "id": "http://jsonschema.net/playButton/position",
+                                "required": true,
+                                "properties": {
+                                    "x": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/playButton/position/x",
+                                        "required": true
+                                    },
+                                    "y": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/playButton/position/y",
+                                        "required": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "skinDownloadUrl": {
+                        "type": "string",
+                        "id": "http://jsonschema.net/skinDownloadUrl",
+                        "required": true
+                    },
+                    "slider": {
+                        "type": "object",
+                        "id": "http://jsonschema.net/slider",
+                        "required": true,
+                        "properties": {
+                            "dimension": {
+                                "type": "object",
+                                "id": "http://jsonschema.net/slider/dimension",
+                                "required": true,
+                                "properties": {
+                                    "height": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/slider/dimension/height",
+                                        "required": true
+                                    },
+                                    "width": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/slider/dimension/width",
+                                        "required": true
+                                    }
+                                }
+                            },
+                            "position": {
+                                "type": "object",
+                                "id": "http://jsonschema.net/slider/position",
+                                "required": true,
+                                "properties": {
+                                    "x": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/slider/position/x",
+                                        "required": true
+                                    },
+                                    "y": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/slider/position/y",
+                                        "required": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "stopButton": {
+                        "type": "object",
+                        "id": "http://jsonschema.net/stopButton",
+                        "required": true,
+                        "properties": {
+                            "dimension": {
+                                "type": "object",
+                                "id": "http://jsonschema.net/stopButton/dimension",
+                                "required": true,
+                                "properties": {
+                                    "height": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/stopButton/dimension/height",
+                                        "required": true
+                                    },
+                                    "width": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/stopButton/dimension/width",
+                                        "required": true
+                                    }
+                                }
+                            },
+                            "position": {
+                                "type": "object",
+                                "id": "http://jsonschema.net/stopButton/position",
+                                "required": true,
+                                "properties": {
+                                    "x": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/stopButton/position/x",
+                                        "required": true
+                                    },
+                                    "y": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/stopButton/position/y",
+                                        "required": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "volume": {
+                        "type": "object",
+                        "id": "http://jsonschema.net/volume",
+                        "required": true,
+                        "properties": {
+                            "dimension": {
+                                "type": "object",
+                                "id": "http://jsonschema.net/volume/dimension",
+                                "required": true,
+                                "properties": {
+                                    "height": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/volume/dimension/height",
+                                        "required": true
+                                    },
+                                    "width": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/volume/dimension/width",
+                                        "required": true
+                                    }
+                                }
+                            },
+                            "position": {
+                                "type": "object",
+                                "id": "http://jsonschema.net/volume/position",
+                                "required": true,
+                                "properties": {
+                                    "x": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/volume/position/x",
+                                        "required": true
+                                    },
+                                    "y": {
+                                        "type": "number",
+                                        "id": "http://jsonschema.net/volume/position/y",
+                                        "required": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
           
 + Response 201 (application/json)
