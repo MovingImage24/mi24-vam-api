@@ -247,8 +247,64 @@ Get, create or update Video-Managers
 
 ### List of player-skins [GET]
 + Response 200 (application/json)
+    + Body
+    
+            [
+                {
+                    "name": "A player-skin 1",
+                    "id": "uuid1"
+                },
+                {
+                    "name": "A player-skin 2",
+                    "id": "uuid2"
+                }
+            ]
 
-        [{"name":"A player-skin 1", "id":1}, {"name": "A player-skin 2", "id":2}]
+    + Schema
+    
+            {
+                "type": "object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required": false,
+                "properties": {
+                    "0": {
+                        "type": "object",
+                        "id": "http://jsonschema.net/0",
+                        "required": false,
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "id": "http://jsonschema.net/0/id",
+                                "required": true
+                            },
+                            "name": {
+                                "type": "string",
+                                "id": "http://jsonschema.net/0/name",
+                                "required": true
+                            }
+                        }
+                    },
+                    "1": {
+                        "type": "object",
+                        "id": "http://jsonschema.net/1",
+                        "required": false,
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "id": "http://jsonschema.net/1/id",
+                                "required": true
+                            },
+                            "name": {
+                                "type": "string",
+                                "id": "http://jsonschema.net/1/name",
+                                "required": true
+                            }
+                        }
+                    }
+                }
+            }
+    
 
 
 # Group Player Definitions
@@ -802,24 +858,26 @@ Get, create or update a player-definition
 + Request (application/json)
     + Body
     
-            {"name":"name of new player-definition", "playerSkinId":1}
+            {
+                "name": "name of new player-definition",
+                "playerSkinId": "uuid1"
+            }
             
     + Schema
     
             {
-            "type": "object",
-            "$schema": "http://json-schema.org/draft-03/schema",
-            "id": "http://jsonschema.net",
-            "required": true,
-            "properties": 
-                {
+                "type": "object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required": false,
+                "properties": {
                     "name": {
                         "type": "string",
                         "id": "http://jsonschema.net/name",
                         "required": true
                     },
                     "playerSkinId": {
-                        "type": "number",
+                        "type": "string",
                         "id": "http://jsonschema.net/playerSkinId",
                         "required": true
                     }
@@ -834,7 +892,7 @@ Get, create or update a player-definition
 
 + Parameters 
     + videoManagerId (required, number, `3`) ... Numeric `id` of the videomanager to perform action with. Has example value.
-    + playerDefinitionId (required, number, `3`) ... Numeric `id` of the player-definition to perform action with. Has example value.
+    + playerDefinitionId (required, string, `94-Ta-emU7mbka7EUcnA14`) ... String (uuid) `id` of the player-definition to perform action with. Has example value.
 
 ### Update the colors [PUT]
 
@@ -933,7 +991,7 @@ Note: The following examples demonstrates how to update the value 'useHtmlFirst'
 
 + Parameters 
     + videoManagerId (required, number, `3`) ... Numeric `id` of the videomanager to perform action with. Has example value.
-    + playerDefinitionId (required, number, `3`) ... Numeric `id` of the player-definition to perform action with. Has example value.
+    + playerDefinitionId (required, string, `94-Ta-emU7mbka7EUcnA14`) ... String (uuid) `id` of the player-definition to perform action with. Has example value.
 
 ### Update one or more options [PATCH]
 
@@ -981,7 +1039,7 @@ Note: The following examples demonstrates how to update the value 'hidebar'. To 
 
 + Parameters 
     + videoManagerId (required, number, `3`) ... Numeric `id` of the videomanager to perform action with. Has example value.
-    + playerDefinitionId (required, number, `3`) ... Numeric `id` of the player-definition to perform action with. Has example value.
+    + playerDefinitionId (required, string, `94-Ta-emU7mbka7EUcnA14`) ... String (uuid) `id` of the player-definition to perform action with. Has example value.
 
 ### Update one or more controls [PATCH]
 
