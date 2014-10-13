@@ -242,7 +242,8 @@ This creates a new Video-Manager
                 },
                 "transcodingProfiles": [
                     {
-                        "key": "480p",
+                        "key": "abc700",
+                        "quality": "480p",
                         "videoExtension": "mp4",
                         "stillExtension": "jpeg",
                         "createStill": true,
@@ -486,6 +487,11 @@ This creates a new Video-Manager
                                     "id": "http://jsonschema.net/transcodingProfiles/0/key",
                                     "required": true
                                 },
+                                "quality": {
+                                    "type": "string",
+                                    "id": "http://jsonschema.net/quality",
+                                    "required": true
+                                },
                                 "stillExtension": {
                                     "type": "string",
                                     "id": "http://jsonschema.net/transcodingProfiles/0/stillExtension",
@@ -609,7 +615,8 @@ Update or add Transcoding Profiles
     + Body
      
             {
-                "key": "480p",
+                "key": "abc700",
+                "quality": "480p",
                 "videoExtension": "mp4",
                 "stillExtension": "jpeg",
                 "createStill": true,
@@ -720,6 +727,11 @@ Update or add Transcoding Profiles
                     "key": {
                         "type": "string",
                         "id": "http://jsonschema.net/key",
+                        "required": true
+                    },
+                    "quality": {
+                        "type": "string",
+                        "id": "http://jsonschema.net/quality",
                         "required": true
                     },
                     "stillExtension": {
