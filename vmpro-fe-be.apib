@@ -1,0 +1,1154 @@
+FORMAT: 1A
+HOST: http://vmpro.eh.mi24.tv
+
+# vmpro
+VMPRO API is a *short texts saving* service similar to its physical paper presence on your table.
+
+
+# Group SERVICEOBJECT
+Beschreibung für das SERVICEOBJECT
+
+## Create and List of SERVICEOBJECT [/base-url]
+
+### List of existing SERVICEOBJECTs [GET]
+Use this to retrieve a list of all existing SERVICEOBJECTS
++ Response 200 (application/json)
+
+        [{"id": 1, "property": "value" }, {"id": 2, "property": "value" }]
+
+### Create new SERVICEOBJECT [POST]
+This create an new SERVICEOBJECT
++ Request (application/json)
+
+        {"property": "value" }
+
++ Response 201
+
+## Manipulate SERVICEOBJECT [/base-url/{theId}]
++ Parameters
+    + theId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example value.
+
+### Get SERVICEOBJECT [GET]
++ Response 200 (application/json)
+
+        {"id": 1, "property": "value" }
+
+### Update complete SERVICEOBJECT [PUT]
++ Request (application/json)
+
+        {"id": 1, "property": "newvalue" }
+
++ Response 204
+
+### Update parts of SERVICEOBJECT [PATCH]
++ Request (application/json)
+
+        {"id": 1, "property": "newvalue" }
+
++ Response 204
+
+### Delete SERVICEOBJECT [DELETE]
++ Response 204
+
+
+
+
+
+
+# Group Trash Items
+Deleted video blah
+
+## Trash Item Collection [/vam/rest/vms/{videoManagerId}/trash]
+A list of all video objects in trashcan as an array of objects
+
++ Parameters
+    + videoManagerId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example value.
+
+### List all Trash Items [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "title": "properties and values of video object needed"
+        }, {
+          "id": 2, "title": "properties and values of video object needed"
+        }]
+
+
+
+# Group Embed Types
+Embed Types related resources of the **VMPRO API**
+
+## Embed Types Collection [/vam/rest/vms/{videoManagerId}/embedtype]
+A list of all Embed Types as an array of objects
+
++ Parameters
+    + videoManagerId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example value.
+
+### List all Embed Types [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": "HTML_CODE"
+        }, {
+          "id": "LINK_URL"
+        }]
+
+
+# Group Player
+Player related resources of the **VMPRO API**
+
+## Player Collection [/vam/rest/vms/{videoManagerId}/player]
+A list of all Players as an array of objects
+
++ Parameters
+    + videoManagerId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example value.
+
+### List all Players [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "title": "Player default (APIARY)"
+        }, {
+          "id": 2, "title": "Player green (APIARY)"
+        }]
+
+
+
+# Group Embed Codes
+Embed Codes related resources of the **VMPRO API**
+
+
+## Embed Code [/vam/rest/vms/{videoManagerId}/video/{videoId}/player/{playerId}/embedcode/{embedTypeId}]
+A single Embed Code object with all its details
+
++ Parameters
+    + videoManagerId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example value.
+    + videoId (required, string, `74WGsUCJ3QJMjN8-LeYFpm`) ... string `id` of the selected video to perform action with. Has example value.
+    + playerId (required, number, `2`) ... Numeric `id` of the Player to perform action with. Has example value.
+    + embedTypeId (required, string, `HTML_CODE`) ... string `id` of the Player to perform action with. Has example value.
+
+### Retrieve an Embed Code [GET]
++ Response 200 (application/json)
+
+        {
+          "id": "HTML_CODE",
+          "code": "<mi24-video video-id="74WGsUCJ3QJMjN8-LeYFpm" player-id="2" config-type="vmpro" url="//d.video-cdn.net"></mi24-video><script src="//e.video-cdn.net/elfriede.js"></script>"
+        }
+
+
+
+
+
+
+# Group Statistics
+Hier können die verschienden Reports bezogen werden.
+
+
+## Coverage [/vam/rest/vms/{videoManagerId}/statistics/report/coverage{?video-id,start-date,end-date}]
++ Parameters
+    + videoManagerId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example value.
+    + video-id (required, string, `74WGsUCJ3QJMjN8-LeYFpm`) ... String `id` of the selected video to perform action with
+    + start-date (required, number, `1388530800000`) ... Numeric `value` of start date
+    + end-date (required, number, `1388530800000`) ... Numeric `value` of end date
+
+### Get statistics report for coverage [GET]
++ Response 200 (application/json)
+
+        {
+            "totalLength": 12000,
+            "data": [
+                {
+                    "timeStamp": 5000,
+                    "value": 5
+                },
+                {
+                    "timeStamp": 5000,
+                    "value": 3
+                }
+            ]
+        }
+
+
+## Views [/vam/rest/vms/{videoManagerId}/statistics/report/views{?video-id,start-date,end-date}]
++ Parameters
+    + videoManagerId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example value.
+    + video-id (required, string, `74WGsUCJ3QJMjN8-LeYFpm`) ... String `id` of the selected video to perform action with
+    + start-date (required, number, `1388530800000`) ... Numeric `value` of start date
+    + end-date (required, number, `1388530800000`) ... Numeric `value` of end date
+    
+### Get statistics report for views [GET]
++ Response 200 (application/json)
+
+        [
+            {
+                "timeStamp": 1388530800000,
+                "value": 5
+            },
+            {
+                "timeStamp": 1388617200000,
+                "value": 10
+            }
+        ]
+
+
+## Plays [/vam/rest/vms/{videoManagerId}/statistics/report/plays{?video-id,start-date,end-date}]
++ Parameters
+    + videoManagerId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example value.
+    + video-id (required, string, `74WGsUCJ3QJMjN8-LeYFpm`) ... String `id` of the selected video to perform action with
+    + start-date (required, number, `1388530800000`) ... Numeric `value` of start date
+    + end-date (required, number, `1388530800000`) ... Numeric `value` of end date
+    
+### Get statistics report for plays [GET]
++ Response 200 (application/json)
+
+        [
+            {
+                "timeStamp": 1388530800000,
+                "value": 3
+            },
+            {
+                "timeStamp": 1388617200000,
+                "value": 8
+            }
+        ]
+
+
+# Group Video Manager
+Get, create or update Video-Managers
+
+## Video-Managers [/vam/rest/vms]
+
+### List of existing Video-Manages [GET]
++ Response 200 (application/json)
+        
+        [{"id": 1, "name": "Video Manager 1" }, {"id": 2, "name": "Video Manager 2" }]
+
+                  
+## Specific Video-Manager [/vam/rest/vms/{videoManagerId}]
++ Parameters
+    + videoManagerId (required, number, `3`) ... Numeric `id` of the VideoManager to perform action with.
+
+### Get Video-Manager [GET] 
++ Response 200 (application/json)
+    
+        {
+            "id": 3,
+            "name": "Video Manager 3"
+        }
+
+
+# Group Player Skin
+
+## Player-Skin [/vam/rest/vms/{videoManagerId}/player-skins]
+
++ Parameters
+    + videoManagerId (required, number, `3`) ... Numeric `id` of the videomanger to perform action with. Has example value.
+
+
+### List of player-skins [GET]
++ Response 200 (application/json)
+    + Body
+    
+            [
+                {
+                    "name": "A player-skin 1",
+                    "id": "uuid1"
+                },
+                {
+                    "name": "A player-skin 2",
+                    "id": "uuid2"
+                }
+            ]
+
+    + Schema
+    
+            {
+                "type": "object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required": false,
+                "properties": {
+                    "0": {
+                        "type": "object",
+                        "id": "http://jsonschema.net/0",
+                        "required": false,
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "id": "http://jsonschema.net/0/id",
+                                "required": true
+                            },
+                            "name": {
+                                "type": "string",
+                                "id": "http://jsonschema.net/0/name",
+                                "required": true
+                            }
+                        }
+                    },
+                    "1": {
+                        "type": "object",
+                        "id": "http://jsonschema.net/1",
+                        "required": false,
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "id": "http://jsonschema.net/1/id",
+                                "required": true
+                            },
+                            "name": {
+                                "type": "string",
+                                "id": "http://jsonschema.net/1/name",
+                                "required": true
+                            }
+                        }
+                    }
+                }
+            }
+    
+
+
+# Group Player Definitions
+Get, create or update a player-definition
+
+## Player-definitions [/vam/rest/vms/{videoManagerId}/player-definitions]
+
++ Parameters 
+    + videoManagerId (required, number, `3`) ... Numeric `id` of a videomanger to perform action with. Has example value.
+
+### List of player-definitions [GET]    
++ Response 200 (application/json)
+
+    + Body
+        
+            [
+                {
+                    "id": "94-Ta-emU7mbka7EUcnA14",
+                    "analyticsUrl": "//c-test1.mi24.tv/event",
+                    "options": {
+                        "defaultQuality": "mq",
+                        "useHtmlFirst": false,
+                        "responsive": true,
+                        "autoplay": true
+                    },
+                    "skinUrl": "http://dl.edge-cdn.net/flashplayer/skins/skin_132.png",
+                    "controlbar": {
+                        "hidebar": true,
+                        "playButton": {
+                            "dimension": {
+                                "width": 100,
+                                "height": 100
+                            },
+                            "position": {
+                                "x": 280,
+                                "y": 0
+                            }
+                        },
+                        "stopButton": {
+                            "dimension": {
+                                "width": 100,
+                                "height": 100
+                            },
+                            "position": {
+                                "x": 280,
+                                "y": 0
+                            }
+                        },
+                        "slider": {
+                            "dimension": {
+                                "width": 100,
+                                "height": 100
+                            },
+                            "position": {
+                                "x": 280,
+                                "y": 0
+                            }
+                        },
+                        "mute": {
+                            "dimension": {
+                                "width": 100,
+                                "height": 100
+                            },
+                            "position": {
+                                "x": 280,
+                                "y": 0
+                            }
+                        },
+                        "volume": {
+                            "dimension": {
+                                "width": 100,
+                                "height": 100
+                            },
+                            "position": {
+                                "x": 280,
+                                "y": 0
+                            }
+                        },
+                        "currentTime": true,
+                        "duration": true,
+                        "fullscreen": {
+                            "dimension": {
+                                "width": 100,
+                                "height": 100
+                            },
+                            "position": {
+                                "x": 280,
+                                "y": 0
+                            }
+                        },
+                        "quality": true,
+                        "colors": {
+                            "slider": {
+                                "text": "fff000",
+                                "progress": "fff000",
+                                "background": "fff000"
+                            },
+                            "button": {
+                                "active": "fff000",
+                                "default": "fff000",
+                                "hover": "fff000"
+                            },
+                            "background": {
+                                "default": "fff000"
+                            }
+                        }
+                    },
+                    "bigPlayButton": {
+                        "customButton": false,
+                        "dimension": {
+                            "width": 100,
+                            "height": 100
+                        },
+                        "position": {
+                            "x": 280,
+                            "y": 0
+                        }
+                    }
+                }
+            ]
+    
+    + Schema
+
+             {
+                "type": "object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required": true,
+                "properties": {
+                    "0": {
+                        "type": "object",
+                        "id": "http://jsonschema.net/0",
+                        "required": true,
+                        "properties": {
+                            "analyticsUrl": {
+                                "type": "string",
+                                "id": "http://jsonschema.net/0/analyticsUrl",
+                                "required": true
+                            },
+                            "bigPlayButton": {
+                                "type": "object",
+                                "id": "http://jsonschema.net/0/bigPlayButton",
+                                "required": true,
+                                "properties": {
+                                    "customButton": {
+                                        "type": "boolean",
+                                        "id": "http://jsonschema.net/0/bigPlayButton/customButton",
+                                        "required": true
+                                    },
+                                    "dimension": {
+                                        "type": "object",
+                                        "id": "http://jsonschema.net/0/bigPlayButton/dimension",
+                                        "required": true,
+                                        "properties": {
+                                            "height": {
+                                                "type": "number",
+                                                "id": "http://jsonschema.net/0/bigPlayButton/dimension/height",
+                                                "required": true
+                                            },
+                                            "width": {
+                                                "type": "number",
+                                                "id": "http://jsonschema.net/0/bigPlayButton/dimension/width",
+                                                "required": true
+                                            }
+                                        }
+                                    },
+                                    "position": {
+                                        "type": "object",
+                                        "id": "http://jsonschema.net/0/bigPlayButton/position",
+                                        "required": true,
+                                        "properties": {
+                                            "x": {
+                                                "type": "number",
+                                                "id": "http://jsonschema.net/0/bigPlayButton/position/x",
+                                                "required": true
+                                            },
+                                            "y": {
+                                                "type": "number",
+                                                "id": "http://jsonschema.net/0/bigPlayButton/position/y",
+                                                "required": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "controlbar": {
+                                "type": "object",
+                                "id": "http://jsonschema.net/0/controlbar",
+                                "required": true,
+                                "properties": {
+                                    "colors": {
+                                        "type": "object",
+                                        "id": "http://jsonschema.net/0/controlbar/colors",
+                                        "required": true,
+                                        "properties": {
+                                            "background": {
+                                                "type": "object",
+                                                "id": "http://jsonschema.net/0/controlbar/colors/background",
+                                                "required": true,
+                                                "properties": {
+                                                    "default": {
+                                                        "type": "string",
+                                                        "id": "http://jsonschema.net/0/controlbar/colors/background/default",
+                                                        "required": true
+                                                    }
+                                                }
+                                            },
+                                            "button": {
+                                                "type": "object",
+                                                "id": "http://jsonschema.net/0/controlbar/colors/button",
+                                                "required": true,
+                                                "properties": {
+                                                    "active": {
+                                                        "type": "string",
+                                                        "id": "http://jsonschema.net/0/controlbar/colors/button/active",
+                                                        "required": true
+                                                    },
+                                                    "default": {
+                                                        "type": "string",
+                                                        "id": "http://jsonschema.net/0/controlbar/colors/button/default",
+                                                        "required": true
+                                                    },
+                                                    "hover": {
+                                                        "type": "string",
+                                                        "id": "http://jsonschema.net/0/controlbar/colors/button/hover",
+                                                        "required": true
+                                                    }
+                                                }
+                                            },
+                                            "slider": {
+                                                "type": "object",
+                                                "id": "http://jsonschema.net/0/controlbar/colors/slider",
+                                                "required": true,
+                                                "properties": {
+                                                    "background": {
+                                                        "type": "string",
+                                                        "id": "http://jsonschema.net/0/controlbar/colors/slider/background",
+                                                        "required": true
+                                                    },
+                                                    "progress": {
+                                                        "type": "string",
+                                                        "id": "http://jsonschema.net/0/controlbar/colors/slider/progress",
+                                                        "required": true
+                                                    },
+                                                    "text": {
+                                                        "type": "string",
+                                                        "id": "http://jsonschema.net/0/controlbar/colors/slider/text",
+                                                        "required": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "currentTime": {
+                                        "type": "boolean",
+                                        "id": "http://jsonschema.net/0/controlbar/currentTime",
+                                        "required": true
+                                    },
+                                    "duration": {
+                                        "type": "boolean",
+                                        "id": "http://jsonschema.net/0/controlbar/duration",
+                                        "required": true
+                                    },
+                                    "fullscreen": {
+                                        "type": "object",
+                                        "id": "http://jsonschema.net/0/controlbar/fullscreen",
+                                        "required": true,
+                                        "properties": {
+                                            "dimension": {
+                                                "type": "object",
+                                                "id": "http://jsonschema.net/0/controlbar/fullscreen/dimension",
+                                                "required": true,
+                                                "properties": {
+                                                    "height": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/fullscreen/dimension/height",
+                                                        "required": true
+                                                    },
+                                                    "width": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/fullscreen/dimension/width",
+                                                        "required": true
+                                                    }
+                                                }
+                                            },
+                                            "position": {
+                                                "type": "object",
+                                                "id": "http://jsonschema.net/0/controlbar/fullscreen/position",
+                                                "required": true,
+                                                "properties": {
+                                                    "x": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/fullscreen/position/x",
+                                                        "required": true
+                                                    },
+                                                    "y": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/fullscreen/position/y",
+                                                        "required": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "hidebar": {
+                                        "type": "boolean",
+                                        "id": "http://jsonschema.net/0/controlbar/hidebar",
+                                        "required": true
+                                    },
+                                    "mute": {
+                                        "type": "object",
+                                        "id": "http://jsonschema.net/0/controlbar/mute",
+                                        "required": true,
+                                        "properties": {
+                                            "dimension": {
+                                                "type": "object",
+                                                "id": "http://jsonschema.net/0/controlbar/mute/dimension",
+                                                "required": true,
+                                                "properties": {
+                                                    "height": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/mute/dimension/height",
+                                                        "required": true
+                                                    },
+                                                    "width": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/mute/dimension/width",
+                                                        "required": true
+                                                    }
+                                                }
+                                            },
+                                            "position": {
+                                                "type": "object",
+                                                "id": "http://jsonschema.net/0/controlbar/mute/position",
+                                                "required": true,
+                                                "properties": {
+                                                    "x": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/mute/position/x",
+                                                        "required": true
+                                                    },
+                                                    "y": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/mute/position/y",
+                                                        "required": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "playButton": {
+                                        "type": "object",
+                                        "id": "http://jsonschema.net/0/controlbar/playButton",
+                                        "required": true,
+                                        "properties": {
+                                            "dimension": {
+                                                "type": "object",
+                                                "id": "http://jsonschema.net/0/controlbar/playButton/dimension",
+                                                "required": true,
+                                                "properties": {
+                                                    "height": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/playButton/dimension/height",
+                                                        "required": true
+                                                    },
+                                                    "width": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/playButton/dimension/width",
+                                                        "required": true
+                                                    }
+                                                }
+                                            },
+                                            "position": {
+                                                "type": "object",
+                                                "id": "http://jsonschema.net/0/controlbar/playButton/position",
+                                                "required": true,
+                                                "properties": {
+                                                    "x": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/playButton/position/x",
+                                                        "required": true
+                                                    },
+                                                    "y": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/playButton/position/y",
+                                                        "required": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "quality": {
+                                        "type": "boolean",
+                                        "id": "http://jsonschema.net/0/controlbar/quality",
+                                        "required": true
+                                    },
+                                    "slider": {
+                                        "type": "object",
+                                        "id": "http://jsonschema.net/0/controlbar/slider",
+                                        "required": true,
+                                        "properties": {
+                                            "dimension": {
+                                                "type": "object",
+                                                "id": "http://jsonschema.net/0/controlbar/slider/dimension",
+                                                "required": true,
+                                                "properties": {
+                                                    "height": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/slider/dimension/height",
+                                                        "required": true
+                                                    },
+                                                    "width": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/slider/dimension/width",
+                                                        "required": true
+                                                    }
+                                                }
+                                            },
+                                            "position": {
+                                                "type": "object",
+                                                "id": "http://jsonschema.net/0/controlbar/slider/position",
+                                                "required": true,
+                                                "properties": {
+                                                    "x": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/slider/position/x",
+                                                        "required": true
+                                                    },
+                                                    "y": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/slider/position/y",
+                                                        "required": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "stopButton": {
+                                        "type": "object",
+                                        "id": "http://jsonschema.net/0/controlbar/stopButton",
+                                        "required": true,
+                                        "properties": {
+                                            "dimension": {
+                                                "type": "object",
+                                                "id": "http://jsonschema.net/0/controlbar/stopButton/dimension",
+                                                "required": true,
+                                                "properties": {
+                                                    "height": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/stopButton/dimension/height",
+                                                        "required": true
+                                                    },
+                                                    "width": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/stopButton/dimension/width",
+                                                        "required": true
+                                                    }
+                                                }
+                                            },
+                                            "position": {
+                                                "type": "object",
+                                                "id": "http://jsonschema.net/0/controlbar/stopButton/position",
+                                                "required": true,
+                                                "properties": {
+                                                    "x": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/stopButton/position/x",
+                                                        "required": true
+                                                    },
+                                                    "y": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/stopButton/position/y",
+                                                        "required": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "volume": {
+                                        "type": "object",
+                                        "id": "http://jsonschema.net/0/controlbar/volume",
+                                        "required": true,
+                                        "properties": {
+                                            "dimension": {
+                                                "type": "object",
+                                                "id": "http://jsonschema.net/0/controlbar/volume/dimension",
+                                                "required": true,
+                                                "properties": {
+                                                    "height": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/volume/dimension/height",
+                                                        "required": true
+                                                    },
+                                                    "width": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/volume/dimension/width",
+                                                        "required": true
+                                                    }
+                                                }
+                                            },
+                                            "position": {
+                                                "type": "object",
+                                                "id": "http://jsonschema.net/0/controlbar/volume/position",
+                                                "required": true,
+                                                "properties": {
+                                                    "x": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/volume/position/x",
+                                                        "required": true
+                                                    },
+                                                    "y": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/volume/position/y",
+                                                        "required": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "id": {
+                                "type": "string",
+                                "id": "http://jsonschema.net/0/id",
+                                "required": true
+                            },
+                            "options": {
+                                "type": "object",
+                                "id": "http://jsonschema.net/0/options",
+                                "required": true,
+                                "properties": {
+                                    "autoplay": {
+                                        "type": "boolean",
+                                        "id": "http://jsonschema.net/0/options/autoplay",
+                                        "required": true
+                                    },
+                                    "defaultQuality": {
+                                        "type": "string",
+                                        "id": "http://jsonschema.net/0/options/defaultQuality",
+                                        "required": true
+                                    },
+                                    "responsive": {
+                                        "type": "boolean",
+                                        "id": "http://jsonschema.net/0/options/responsive",
+                                        "required": true
+                                    },
+                                    "useHtmlFirst": {
+                                        "type": "boolean",
+                                        "id": "http://jsonschema.net/0/options/useHtmlFirst",
+                                        "required": true
+                                    }
+                                }
+                            },
+                            "skinUrl": {
+                                "type": "string",
+                                "id": "http://jsonschema.net/0/skinUrl",
+                                "required": true
+                            }
+                        }
+                    }
+                }
+            }
+            
+### Create a new player-definition [POST]
+
++ Request (application/json)
+    + Body
+    
+            {
+                "name": "name of new player-definition",
+                "playerSkinId": "94-Ta-emU7mbka7EUcnA14"
+            }
+            
+    + Schema
+    
+            {
+                "type": "object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required": false,
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "id": "http://jsonschema.net/name",
+                        "required": true
+                    },
+                    "playerSkinId": {
+                        "type": "string",
+                        "id": "http://jsonschema.net/playerSkinId",
+                        "required": true
+                    }
+                }
+            }
++ Response 201
+    + Header
+    
+            Location: /vam/rest/vms/{videoManagerId}/player-definitions/94-Ta-emU7mbka7EUcnA14
+
+## Update the color of a player-definition [/vam/rest/vms/{videoManagerId}/player-definitions/{playerDefinitionId}/colors]
+
++ Parameters 
+    + videoManagerId (required, number, `3`) ... Numeric `id` of the videomanager to perform action with. Has example value.
+    + playerDefinitionId (required, string, `94-Ta-emU7mbka7EUcnA14`) ... String (uuid) `id` of the player-definition to perform action with. Has example value.
+
+### Update the colors [PUT]
+
++ Request (application/json)
+    + Body
+    
+            {
+                "slider": {
+                    "text": "fff000",
+                    "progress": "fff000",
+                    "background": "fff000"
+                },
+                "button": {
+                    "active": "fff000",
+                    "default": "fff000",
+                    "hover": "fff000"
+                },
+                "background": {
+                    "default": "fff000"
+                }
+            }
+
+    + Schema
+    
+                {
+                    "type": "object",
+                    "$schema": "http://json-schema.org/draft-03/schema",
+                    "id": "http://jsonschema.net",
+                    "required": true,
+                    "properties": {
+                        "background": {
+                            "type": "object",
+                            "id": "http://jsonschema.net/background",
+                            "required": true,
+                            "properties": {
+                                "default": {
+                                    "type": "string",
+                                    "id": "http://jsonschema.net/background/default",
+                                    "required": true
+                                }
+                            }
+                        },
+                        "button": {
+                            "type": "object",
+                            "id": "http://jsonschema.net/button",
+                            "required": true,
+                            "properties": {
+                                "active": {
+                                    "type": "string",
+                                    "id": "http://jsonschema.net/button/active",
+                                    "required": true
+                                },
+                                "default": {
+                                    "type": "string",
+                                    "id": "http://jsonschema.net/button/default",
+                                    "required": true
+                                },
+                                "hover": {
+                                    "type": "string",
+                                    "id": "http://jsonschema.net/button/hover",
+                                    "required": true
+                                }
+                            }
+                        },
+                        "slider": {
+                            "type": "object",
+                            "id": "http://jsonschema.net/slider",
+                            "required": true,
+                            "properties": {
+                                "background": {
+                                    "type": "string",
+                                    "id": "http://jsonschema.net/slider/background",
+                                    "required": true
+                                },
+                                "progress": {
+                                    "type": "string",
+                                    "id": "http://jsonschema.net/slider/progress",
+                                    "required": true
+                                },
+                                "text": {
+                                    "type": "string",
+                                    "id": "http://jsonschema.net/slider/text",
+                                    "required": true
+                                }
+                            }
+                        }
+                    }
+            }
+        
+
++ Response 200
+
+## Update a value of the options of a player-definition [/vam/rest/vms/{videoManagerId}/player-definitions/{playerDefinitionId}/options]
+
+Note: The following examples demonstrates how to update the value 'useHtmlFirst'. To update multiple values add them to the request. 
+
++ Parameters 
+    + videoManagerId (required, number, `3`) ... Numeric `id` of the videomanager to perform action with. Has example value.
+    + playerDefinitionId (required, string, `94-Ta-emU7mbka7EUcnA14`) ... String (uuid) `id` of the player-definition to perform action with. Has example value.
+
+### Update one or more options [PATCH]
+
++ Request (application/json)
+
+    + Body
+        
+            {"useHtmlFirst": false}
+
+    + Schema
+    
+            {
+            "type": "object",
+            "$schema": "http://json-schema.org/draft-03/schema",
+            "id": "http://jsonschema.net",
+            "required": false,
+            "properties": {
+                "autoplay": {
+                    "type": "boolean",
+                    "id": "http://jsonschema.net/autoplay",
+                    "required": false
+                },
+                "defaultQuality": {
+                    "type": "string",
+                    "id": "http://jsonschema.net/defaultQuality",
+                    "required": false
+                },
+                "responsive": {
+                    "type": "boolean",
+                    "id": "http://jsonschema.net/responsive",
+                    "required": false
+                },
+                "useHtmlFirst": {
+                    "type": "boolean",
+                    "id": "http://jsonschema.net/useHtmlFirst",
+                    "required": false
+                }
+            }
+            }
++ Response 200
+
+## Update a value of the controls of a player-definition [/vam/rest/vms/{videoManagerId}/player-definitions/{playerDefinitionId}/controls]
+
+Note: The following examples demonstrates how to update the value 'hidebar'. To update multiple values add them to the request. 
+
++ Parameters 
+    + videoManagerId (required, number, `3`) ... Numeric `id` of the videomanager to perform action with. Has example value.
+    + playerDefinitionId (required, string, `94-Ta-emU7mbka7EUcnA14`) ... String (uuid) `id` of the player-definition to perform action with. Has example value.
+
+### Update one or more controls [PATCH]
+
++ Request (application/json)
+
+    + Body
+        
+            {
+                "hidebar": true
+            }
+
+    + Schema
+    
+            {
+                "type": "object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required": false,
+                "properties": {
+                    "currentTime": {
+                        "type": "boolean",
+                        "id": "http://jsonschema.net/currentTime",
+                        "required": false
+                    },
+                    "duration": {
+                        "type": "boolean",
+                        "id": "http://jsonschema.net/duration",
+                        "required": false
+                    },
+                    "fullscreen": {
+                        "type": "boolean",
+                        "id": "http://jsonschema.net/fullscreen",
+                        "required": false
+                    },
+                    "hidebar": {
+                        "type": "boolean",
+                        "id": "http://jsonschema.net/hidebar",
+                        "required": false
+                    },
+                    "mute": {
+                        "type": "boolean",
+                        "id": "http://jsonschema.net/mute",
+                        "required": false
+                    },
+                    "playButton": {
+                        "type": "boolean",
+                        "id": "http://jsonschema.net/playButton",
+                        "required": false
+                    },
+                    "quality": {
+                        "type": "boolean",
+                        "id": "http://jsonschema.net/quality",
+                        "required": false
+                    },
+                    "slider": {
+                        "type": "boolean",
+                        "id": "http://jsonschema.net/slider",
+                        "required": false
+                    },
+                    "stopButton": {
+                        "type": "boolean",
+                        "id": "http://jsonschema.net/stopButton",
+                        "required": false
+                    },
+                    "volume": {
+                        "type": "boolean",
+                        "id": "http://jsonschema.net/volume",
+                        "required": false
+                    },
+                     "buttonSeperator": {
+                         "type": "boolean",
+                         "id": "http://jsonschema.net/buttonSeperator",
+                         "required": false
+                     },
+                     "sliderBackground": {
+                        "type": "boolean",
+                        "id": "http://jsonschema.net/sliderBackground",
+                        "required": false
+                     },
+                     "sliderBuffer": {
+                        "type": "boolean",
+                        "id": "http://jsonschema.net/sliderBuffer",
+                        "required": false
+                     },
+                     "sliderProgress": {
+                        "type": "boolean",
+                        "id": "http://jsonschema.net/sliderProgress",
+                        "required": false
+                     },
+                     "volumeBackground": {
+                        "type": "boolean",
+                        "id": "http://jsonschema.net/volumeBackground",
+                        "required": false
+                     }                                                               
+                }
+            }
++ Response 200
