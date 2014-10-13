@@ -383,6 +383,57 @@ Get, create or update a player-definition
                                 "y": 0
                             }
                         },
+                         "volumeBackground": {
+                            "dimension": {
+                                "width": 100,
+                                "height": 100
+                            },
+                            "position": {
+                                "x": 280,
+                                "y": 0
+                            }
+                        },
+                         "buttonSeperator": {
+                                        "dimension": {
+                                            "width": 100,
+                                            "height": 100
+                                        },
+                                        "position": {
+                                            "x": 280,
+                                            "y": 0
+                                        }
+                         },
+                         "sliderBackground": {
+                                        "dimension": {
+                                            "width": 100,
+                                            "height": 100
+                                        },
+                                        "position": {
+                                            "x": 280,
+                                            "y": 0
+                                        }
+                         }, 
+                         "sliderBuffer": {
+                                        "dimension": {
+                                            "width": 100,
+                                            "height": 100
+                                        },
+                                        "position": {
+                                            "x": 280,
+                                            "y": 0
+                                        }
+                         },
+                         "sliderProgress": {
+                                        "dimension": {
+                                            "width": 100,
+                                            "height": 100
+                                        },
+                                        "position": {
+                                            "x": 280,
+                                            "y": 0
+                                        }
+                         }
+                        ,
                         "currentTime": true,
                         "duration": true,
                         "fullscreen": {
@@ -428,7 +479,7 @@ Get, create or update a player-definition
     
     + Schema
 
-             {
+            {
                 "type": "object",
                 "$schema": "http://json-schema.org/draft-03/schema",
                 "id": "http://jsonschema.net",
@@ -495,6 +546,47 @@ Get, create or update a player-definition
                                 "id": "http://jsonschema.net/0/controlbar",
                                 "required": true,
                                 "properties": {
+                                    "buttonSeperator": {
+                                        "type": "object",
+                                        "id": "http://jsonschema.net/0/controlbar/buttonSeperator",
+                                        "required": true,
+                                        "properties": {
+                                            "dimension": {
+                                                "type": "object",
+                                                "id": "http://jsonschema.net/0/controlbar/buttonSeperator/dimension",
+                                                "required": true,
+                                                "properties": {
+                                                    "height": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/buttonSeperator/dimension/height",
+                                                        "required": true
+                                                    },
+                                                    "width": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/buttonSeperator/dimension/width",
+                                                        "required": true
+                                                    }
+                                                }
+                                            },
+                                            "position": {
+                                                "type": "object",
+                                                "id": "http://jsonschema.net/0/controlbar/buttonSeperator/position",
+                                                "required": true,
+                                                "properties": {
+                                                    "x": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/buttonSeperator/position/x",
+                                                        "required": true
+                                                    },
+                                                    "y": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/buttonSeperator/position/y",
+                                                        "required": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "colors": {
                                         "type": "object",
                                         "id": "http://jsonschema.net/0/controlbar/colors",
@@ -701,6 +793,129 @@ Get, create or update a player-definition
                                         "id": "http://jsonschema.net/0/controlbar/quality",
                                         "required": true
                                     },
+                                    "sliderBackground": {
+                                        "type": "object",
+                                        "id": "http://jsonschema.net/0/controlbar/sliderBackground",
+                                        "required": true,
+                                        "properties": {
+                                            "dimension": {
+                                                "type": "object",
+                                                "id": "http://jsonschema.net/0/controlbar/sliderBackground/dimension",
+                                                "required": true,
+                                                "properties": {
+                                                    "height": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/sliderBackground/dimension/height",
+                                                        "required": true
+                                                    },
+                                                    "width": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/sliderBackground/dimension/width",
+                                                        "required": true
+                                                    }
+                                                }
+                                            },
+                                            "position": {
+                                                "type": "object",
+                                                "id": "http://jsonschema.net/0/controlbar/sliderBackground/position",
+                                                "required": true,
+                                                "properties": {
+                                                    "x": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/sliderBackground/position/x",
+                                                        "required": true
+                                                    },
+                                                    "y": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/sliderBackground/position/y",
+                                                        "required": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "sliderBuffer": {
+                                        "type": "object",
+                                        "id": "http://jsonschema.net/0/controlbar/sliderBuffer",
+                                        "required": true,
+                                        "properties": {
+                                            "dimension": {
+                                                "type": "object",
+                                                "id": "http://jsonschema.net/0/controlbar/sliderBuffer/dimension",
+                                                "required": true,
+                                                "properties": {
+                                                    "height": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/sliderBuffer/dimension/height",
+                                                        "required": true
+                                                    },
+                                                    "width": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/sliderBuffer/dimension/width",
+                                                        "required": true
+                                                    }
+                                                }
+                                            },
+                                            "position": {
+                                                "type": "object",
+                                                "id": "http://jsonschema.net/0/controlbar/sliderBuffer/position",
+                                                "required": true,
+                                                "properties": {
+                                                    "x": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/sliderBuffer/position/x",
+                                                        "required": true
+                                                    },
+                                                    "y": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/sliderBuffer/position/y",
+                                                        "required": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "sliderProgress": {
+                                        "type": "object",
+                                        "id": "http://jsonschema.net/0/controlbar/sliderProgress",
+                                        "required": true,
+                                        "properties": {
+                                            "dimension": {
+                                                "type": "object",
+                                                "id": "http://jsonschema.net/0/controlbar/sliderProgress/dimension",
+                                                "required": true,
+                                                "properties": {
+                                                    "height": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/sliderProgress/dimension/height",
+                                                        "required": true
+                                                    },
+                                                    "width": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/sliderProgress/dimension/width",
+                                                        "required": true
+                                                    }
+                                                }
+                                            },
+                                            "position": {
+                                                "type": "object",
+                                                "id": "http://jsonschema.net/0/controlbar/sliderProgress/position",
+                                                "required": true,
+                                                "properties": {
+                                                    "x": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/sliderProgress/position/x",
+                                                        "required": true
+                                                    },
+                                                    "y": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/sliderProgress/position/y",
+                                                        "required": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
                                     "slider": {
                                         "type": "object",
                                         "id": "http://jsonschema.net/0/controlbar/slider",
@@ -777,6 +992,47 @@ Get, create or update a player-definition
                                                     "y": {
                                                         "type": "number",
                                                         "id": "http://jsonschema.net/0/controlbar/stopButton/position/y",
+                                                        "required": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "volumeBackground": {
+                                        "type": "object",
+                                        "id": "http://jsonschema.net/0/controlbar/volumeBackground",
+                                        "required": true,
+                                        "properties": {
+                                            "dimension": {
+                                                "type": "object",
+                                                "id": "http://jsonschema.net/0/controlbar/volumeBackground/dimension",
+                                                "required": true,
+                                                "properties": {
+                                                    "height": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/volumeBackground/dimension/height",
+                                                        "required": true
+                                                    },
+                                                    "width": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/volumeBackground/dimension/width",
+                                                        "required": true
+                                                    }
+                                                }
+                                            },
+                                            "position": {
+                                                "type": "object",
+                                                "id": "http://jsonschema.net/0/controlbar/volumeBackground/position",
+                                                "required": true,
+                                                "properties": {
+                                                    "x": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/volumeBackground/position/x",
+                                                        "required": true
+                                                    },
+                                                    "y": {
+                                                        "type": "number",
+                                                        "id": "http://jsonschema.net/0/controlbar/volumeBackground/position/y",
                                                         "required": true
                                                     }
                                                 }
@@ -866,7 +1122,7 @@ Get, create or update a player-definition
                         }
                     }
                 }
-            }
+            }             
             
 ### Create a new player-definition [POST]
 
