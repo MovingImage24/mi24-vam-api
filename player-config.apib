@@ -1,0 +1,950 @@
+FORMAT: 1A
+HOST: http://vmpro.eh.mi24.tv
+
+# Group Player Configuration
+This endpoint provides access to player configurations by video id and player id.
+
+## Player Configuration [/play/rest/player/{playerId}/video/{videoId}]
+Returns a player configuration by player id and video id.
+
++ Parameters
+    + playerId (required, string, `94-Ta-emU7mbka7EUcnA14`) ... String `id` of the player ("static" part of the player configuration)
+    + videoId (required, string, `74WGsUCJ3QJMjN8-LeYFpm`) ... String `id` of the video
+     
+### Retrieve a player configuration [GET]
++ Response 200 (application/json)
+    + Body
+        {
+            "dimension": {
+                "width": 854,
+                "height": 480
+            },
+            "videoSources": {
+                "flash": {
+                    "auto": [
+                        {
+                            "mimeType": "",
+                            "source": "http://vod-1.video-cdn.net/z/Dpwy51oz138J7U1Ecd9LLc/17TKLuhmR6EQhTBQuoPa1B.aaa,256,828,1656,2356,.mp4.csmil/manifest.f4m"
+                        }
+                    ],
+                    "108p": [
+                        {
+                            "mimeType": "video/mp4",
+                            "source": "http: //vod-1.video-cdn.net/z/Dpwy51oz138J7U1Ecd9LLc/17TKLuhmR6EQhTBQuoPa1B.aaa256.mp4/manifest.f4m"
+                        }
+                    ],
+                    "360p": [
+                        {
+                            "mimeType": "video/mp4",
+                            "source": "http: //vod-1.video-cdn.net/z/Dpwy51oz138J7U1Ecd9LLc/17TKLuhmR6EQhTBQuoPa1B.aaa828.mp4/manifest.f4m"
+                        }
+                    ],
+                    "480p": [
+                        {
+                            "mimeType": "video/mp4",
+                            "source": "http: //vod-1.video-cdn.net/z/Dpwy51oz138J7U1Ecd9LLc/17TKLuhmR6EQhTBQuoPa1B.aaa1656.mp4/manifest.f4m"
+                        }
+                    ],
+                    "720p": [
+                        {
+                            "mimeType": "video/mp4",
+                            "source": "http: //vod-1.video-cdn.net/z/Dpwy51oz138J7U1Ecd9LLc/17TKLuhmR6EQhTBQuoPa1B.aaa2356.mp4/manifest.f4m"
+                        }
+                    ]
+                },
+                "html": {
+                    "auto": [
+                        {
+                            "mimeType": "application/vnd.apple.mpegurl",
+                            "source": "http://vod-1.video-cdn.net/i/Dpwy51oz138J7U1Ecd9LLc/17TKLuhmR6EQhTBQuoPa1B.aaa,256,828,1656,2356,.mp4.csmil/master.m3u8"
+                        }
+                    ],
+                    "108p": [
+                        {
+                            "mimeType": "video/mp4",
+                            "source": "http://blob-1.video-cdn.net/Dpwy51oz138J7U1Ecd9LLc/17TKLuhmR6EQhTBQuoPa1B.aaa256.mp4"
+                        },
+                        {
+                            "mimeType": "video/webm",
+                            "source": "http://blob-1.video-cdn.net/Dpwy51oz138J7U1Ecd9LLc/17TKLuhmR6EQhTBQuoPa1B.xmv256.mp4"
+                        }
+                    ],
+                    "360p": [
+                        {
+                            "mimeType": "video/mp4",
+                            "source": "http://blob-1.video-cdn.net/Dpwy51oz138J7U1Ecd9LLc/17TKLuhmR6EQhTBQuoPa1B.aaa828.mp4"
+                        },
+                        {
+                            "mimeType": "video/webm",
+                            "source": "http://blob-1.video-cdn.net/Dpwy51oz138J7U1Ecd9LLc/17TKLuhmR6EQhTBQuoPa1B.xmv828.mp4"
+                        }
+                    ],
+                    "480p": [
+                        {
+                            "mimeType": "video/mp4",
+                            "source": "http://blob-1.video-cdn.net/Dpwy51oz138J7U1Ecd9LLc/17TKLuhmR6EQhTBQuoPa1B.aaa1656.mp4"
+                        },
+                        {
+                            "mimeType": "video/webm",
+                            "source": "http://blob-1.video-cdn.net/Dpwy51oz138J7U1Ecd9LLc/17TKLuhmR6EQhTBQuoPa1B.xmv1656.mp4"
+                        }
+                    ],
+                    "720p": [
+                        {
+                            "mimeType": "video/mp4",
+                            "source": "http://blob-1.video-cdn.net/Dpwy51oz138J7U1Ecd9LLc/17TKLuhmR6EQhTBQuoPa1B.aaa2356.mp4"
+                        },
+                        {
+                            "mimeType": "video/webm",
+                            "source": "http://blob-1.video-cdn.net/Dpwy51oz138J7U1Ecd9LLc/17TKLuhmR6EQhTBQuoPa1B.xmv2356.mp4"
+                        }
+                    ]
+                }
+            },
+            "stillSources": {
+                "480p": "//i.video-cdn.net/Dpwy51oz138J7U1Ecd9LLc/17TKLuhmR6EQhTBQuoPa1B.aaa256.5000.jpeg"
+            },
+            "playerDefinition": {
+                "analyticsUrl": "//c.video-cdn.net/event?",
+                "options": {
+                    "defaultQuality": "480p",
+                    "useHtmlFirst": false,
+                    "responsive": true,
+                    "autoplay": true
+                },
+                "skinUrl": "https://dl.edge-cdn.net/flashplayer/skins/skin_46.png",
+                "controlBar": {
+                    "hideBar": true,
+                    "playButton": {
+                        "dimension": {
+                            "width": 45,
+                            "height": 35
+                        },
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "stopButton": {
+                        "dimension": {
+                            "width": 45,
+                            "height": 35
+                        },
+                        "position": {
+                            "x": 45,
+                            "y": 0
+                        }
+                    },
+                    "slider": {
+                        "dimension": {
+                            "width": 25,
+                            "height": 35
+                        },
+                        "position": {
+                            "x": 650,
+                            "y": 0
+                        }
+                    },
+                    "mute": {
+                        "dimension": {
+                            "width": 45,
+                            "height": 35
+                        },
+                        "position": {
+                            "x": 135,
+                            "y": 0
+                        }
+                    },
+                    "volume": {
+                        "dimension": {
+                            "width": 55,
+                            "height": 10
+                        },
+                        "position": {
+                            "x": 0,
+                            "y": 699
+                        }
+                    },
+                    "sliderProgress": {
+                        "dimension": {
+                            "width": 180,
+                            "height": 35
+                        },
+                        "position": {
+                            "x": 0,
+                            "y": 280
+                        }
+                    },
+                    "sliderBuffer": {
+                        "dimension": {
+                            "width": 180,
+                            "height": 35
+                        },
+                        "position": {
+                            "x": 0,
+                            "y": 245
+                        }
+                    },
+                    "sliderBackground": {
+                        "dimension": {
+                            "width": 180,
+                            "height": 35
+                        },
+                        "position": {
+                            "x": 0,
+                            "y": 245
+                        }
+                    },
+                    "volumeBackground": {
+                        "dimension": {
+                            "width": 55,
+                            "height": 10
+                        },
+                        "position": {
+                            "x": 0,
+                            "y": 699
+                        }
+                    },
+                    "currentTime": true,
+                    "duration": true,
+                    "fullScreen": {
+                        "dimension": {
+                            "width": 45,
+                            "height": 35
+                        },
+                        "position": {
+                            "x": 90,
+                            "y": 0
+                        }
+                    },
+                    "buttonSeparator": {
+                        "dimension": {
+                            "width": 1,
+                            "height": 32
+                        },
+                        "position": {
+                            "x": 250,
+                            "y": 0
+                        }
+                    },
+                    "quality": true,
+                    "colors": {
+                        "slider": {
+                            "text": "#000000",
+                            "progress": "#26D449",
+                            "background": "#0D6E20"
+                        },
+                        "button": {
+                            "active": "#E3623B",
+                            "default": "#C72E00",
+                            "hover": "#EDA691"
+                        },
+                        "background": {
+                            "default": "#089925"
+                        }
+                    }
+                },
+                "bigPlayButton": {
+                    "customButton": false,
+                    "dimension": {
+                        "width": 100,
+                        "height": 100
+                    },
+                    "position": {
+                        "x": 280,
+                        "y": 0
+                    }
+                }
+            }
+        }
+    
+    + Schema
+        {
+            "type": "object",
+            "$schema": "http://json-schema.org/draft-03/schema",
+            "id": "http://jsonschema.net",
+            "required": false,
+            "properties": {
+                "dimension": {
+                    "type": "object",
+                    "id": "http://jsonschema.net/dimension",
+                    "required": true,
+                    "properties": {
+                        "height": {
+                            "type": "number",
+                            "id": "http://jsonschema.net/dimension/height",
+                            "required": false
+                        },
+                        "width": {
+                            "type": "number",
+                            "id": "http://jsonschema.net/dimension/width",
+                            "required": false
+                        }
+                    }
+                },
+                "playerDefinition": {
+                    "type": "object",
+                    "id": "http://jsonschema.net/playerDefinition",
+                    "required": true,
+                    "properties": {
+                        "analyticsUrl": {
+                            "type": "string",
+                            "id": "http://jsonschema.net/playerDefinition/analyticsUrl",
+                            "required": true
+                        },
+                        "bigPlayButton": {
+                            "type": "object",
+                            "id": "http://jsonschema.net/playerDefinition/bigPlayButton",
+                            "required": true,
+                            "properties": {
+                                "customButton": {
+                                    "type": "boolean",
+                                    "id": "http://jsonschema.net/playerDefinition/bigPlayButton/customButton",
+                                    "required": false
+                                },
+                                "dimension": {
+                                    "type": "object",
+                                    "id": "http://jsonschema.net/playerDefinition/bigPlayButton/dimension",
+                                    "required": true,
+                                    "properties": {
+                                        "height": {
+                                            "type": "number",
+                                            "id": "http://jsonschema.net/playerDefinition/bigPlayButton/dimension/height",
+                                            "required": true
+                                        },
+                                        "width": {
+                                            "type": "number",
+                                            "id": "http://jsonschema.net/playerDefinition/bigPlayButton/dimension/width",
+                                            "required": true
+                                        }
+                                    }
+                                },
+                                "position": {
+                                    "type": "object",
+                                    "id": "http://jsonschema.net/playerDefinition/bigPlayButton/position",
+                                    "required": true,
+                                    "properties": {
+                                        "x": {
+                                            "type": "number",
+                                            "id": "http://jsonschema.net/playerDefinition/bigPlayButton/position/x",
+                                            "required": true
+                                        },
+                                        "y": {
+                                            "type": "number",
+                                            "id": "http://jsonschema.net/playerDefinition/bigPlayButton/position/y",
+                                            "required": true
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "controlBar": {
+                            "type": "object",
+                            "id": "http://jsonschema.net/playerDefinition/controlBar",
+                            "required": false,
+                            "properties": {
+                                "buttonSeparator": {
+                                    "type": "object",
+                                    "id": "http://jsonschema.net/playerDefinition/controlBar/buttonSeparator",
+                                    "required": true,
+                                    "properties": {
+                                        "dimension": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/playerDefinition/controlBar/buttonSeparator/dimension",
+                                            "required": true,
+                                            "properties": {
+                                                "height": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/buttonSeparator/dimension/height",
+                                                    "required": true
+                                                },
+                                                "width": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/buttonSeparator/dimension/width",
+                                                    "required": true
+                                                }
+                                            }
+                                        },
+                                        "position": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/playerDefinition/controlBar/buttonSeparator/position",
+                                            "required": true,
+                                            "properties": {
+                                                "x": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/buttonSeparator/position/x",
+                                                    "required": true
+                                                },
+                                                "y": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/buttonSeparator/position/y",
+                                                    "required": true
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "colors": {
+                                    "type": "object",
+                                    "id": "http://jsonschema.net/playerDefinition/controlBar/colors",
+                                    "required": false,
+                                    "properties": {
+                                        "background": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/playerDefinition/controlBar/colors/background",
+                                            "required": true,
+                                            "properties": {
+                                                "default": {
+                                                    "type": "string",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/colors/background/default",
+                                                    "required": true
+                                                }
+                                            }
+                                        },
+                                        "button": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/playerDefinition/controlBar/colors/button",
+                                            "required": false,
+                                            "properties": {
+                                                "active": {
+                                                    "type": "string",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/colors/button/active",
+                                                    "required": true
+                                                },
+                                                "default": {
+                                                    "type": "string",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/colors/button/default",
+                                                    "required": true
+                                                },
+                                                "hover": {
+                                                    "type": "string",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/colors/button/hover",
+                                                    "required": true
+                                                }
+                                            }
+                                        },
+                                        "slider": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/playerDefinition/controlBar/colors/slider",
+                                            "required": false,
+                                            "properties": {
+                                                "background": {
+                                                    "type": "string",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/colors/slider/background",
+                                                    "required": true
+                                                },
+                                                "progress": {
+                                                    "type": "string",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/colors/slider/progress",
+                                                    "required": true
+                                                },
+                                                "text": {
+                                                    "type": "string",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/colors/slider/text",
+                                                    "required": true
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "currentTime": {
+                                    "type": "boolean",
+                                    "id": "http://jsonschema.net/playerDefinition/controlBar/currentTime",
+                                    "required": true
+                                },
+                                "duration": {
+                                    "type": "boolean",
+                                    "id": "http://jsonschema.net/playerDefinition/controlBar/duration",
+                                    "required": true
+                                },
+                                "fullScreen": {
+                                    "type": "object",
+                                    "id": "http://jsonschema.net/playerDefinition/controlBar/fullScreen",
+                                    "required": false,
+                                    "properties": {
+                                        "dimension": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/playerDefinition/controlBar/fullScreen/dimension",
+                                            "required": true,
+                                            "properties": {
+                                                "height": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/fullScreen/dimension/height",
+                                                    "required": true
+                                                },
+                                                "width": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/fullScreen/dimension/width",
+                                                    "required": true
+                                                }
+                                            }
+                                        },
+                                        "position": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/playerDefinition/controlBar/fullScreen/position",
+                                            "required": true,
+                                            "properties": {
+                                                "x": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/fullScreen/position/x",
+                                                    "required": true
+                                                },
+                                                "y": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/fullScreen/position/y",
+                                                    "required": true
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "hideBar": {
+                                    "type": "boolean",
+                                    "id": "http://jsonschema.net/playerDefinition/controlBar/hideBar",
+                                    "required": true
+                                },
+                                "mute": {
+                                    "type": "object",
+                                    "id": "http://jsonschema.net/playerDefinition/controlBar/mute",
+                                    "required": false,
+                                    "properties": {
+                                        "dimension": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/playerDefinition/controlBar/mute/dimension",
+                                            "required": true,
+                                            "properties": {
+                                                "height": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/mute/dimension/height",
+                                                    "required": true
+                                                },
+                                                "width": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/mute/dimension/width",
+                                                    "required": true
+                                                }
+                                            }
+                                        },
+                                        "position": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/playerDefinition/controlBar/mute/position",
+                                            "required": true,
+                                            "properties": {
+                                                "x": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/mute/position/x",
+                                                    "required": true
+                                                },
+                                                "y": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/mute/position/y",
+                                                    "required": true
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "playButton": {
+                                    "type": "object",
+                                    "id": "http://jsonschema.net/playerDefinition/controlBar/playButton",
+                                    "required": false,
+                                    "properties": {
+                                        "dimension": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/playerDefinition/controlBar/playButton/dimension",
+                                            "required": true,
+                                            "properties": {
+                                                "height": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/playButton/dimension/height",
+                                                    "required": true
+                                                },
+                                                "width": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/playButton/dimension/width",
+                                                    "required": true
+                                                }
+                                            }
+                                        },
+                                        "position": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/playerDefinition/controlBar/playButton/position",
+                                            "required": true,
+                                            "properties": {
+                                                "x": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/playButton/position/x",
+                                                    "required": true
+                                                },
+                                                "y": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/playButton/position/y",
+                                                    "required": true
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "quality": {
+                                    "type": "boolean",
+                                    "id": "http://jsonschema.net/playerDefinition/controlBar/quality",
+                                    "required": true
+                                },
+                                "sliderBackground": {
+                                    "type": "object",
+                                    "id": "http://jsonschema.net/playerDefinition/controlBar/sliderBackground",
+                                    "required": false,
+                                    "properties": {
+                                        "dimension": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/playerDefinition/controlBar/sliderBackground/dimension",
+                                            "required": true,
+                                            "properties": {
+                                                "height": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/sliderBackground/dimension/height",
+                                                    "required": true
+                                                },
+                                                "width": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/sliderBackground/dimension/width",
+                                                    "required": true
+                                                }
+                                            }
+                                        },
+                                        "position": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/playerDefinition/controlBar/sliderBackground/position",
+                                            "required": true,
+                                            "properties": {
+                                                "x": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/sliderBackground/position/x",
+                                                    "required": true
+                                                },
+                                                "y": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/sliderBackground/position/y",
+                                                    "required": true
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "sliderBuffer": {
+                                    "type": "object",
+                                    "id": "http://jsonschema.net/playerDefinition/controlBar/sliderBuffer",
+                                    "required": false,
+                                    "properties": {
+                                        "dimension": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/playerDefinition/controlBar/sliderBuffer/dimension",
+                                            "required": true,
+                                            "properties": {
+                                                "height": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/sliderBuffer/dimension/height",
+                                                    "required": true
+                                                },
+                                                "width": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/sliderBuffer/dimension/width",
+                                                    "required": true
+                                                }
+                                            }
+                                        },
+                                        "position": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/playerDefinition/controlBar/sliderBuffer/position",
+                                            "required": true,
+                                            "properties": {
+                                                "x": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/sliderBuffer/position/x",
+                                                    "required": true
+                                                },
+                                                "y": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/sliderBuffer/position/y",
+                                                    "required": true
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "sliderProgress": {
+                                    "type": "object",
+                                    "id": "http://jsonschema.net/playerDefinition/controlBar/sliderProgress",
+                                    "required": false,
+                                    "properties": {
+                                        "dimension": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/playerDefinition/controlBar/sliderProgress/dimension",
+                                            "required": true,
+                                            "properties": {
+                                                "height": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/sliderProgress/dimension/height",
+                                                    "required": true
+                                                },
+                                                "width": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/sliderProgress/dimension/width",
+                                                    "required": true
+                                                }
+                                            }
+                                        },
+                                        "position": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/playerDefinition/controlBar/sliderProgress/position",
+                                            "required": true,
+                                            "properties": {
+                                                "x": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/sliderProgress/position/x",
+                                                    "required": true
+                                                },
+                                                "y": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/sliderProgress/position/y",
+                                                    "required": true
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "slider": {
+                                    "type": "object",
+                                    "id": "http://jsonschema.net/playerDefinition/controlBar/slider",
+                                    "required": false,
+                                    "properties": {
+                                        "dimension": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/playerDefinition/controlBar/slider/dimension",
+                                            "required": true,
+                                            "properties": {
+                                                "height": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/slider/dimension/height",
+                                                    "required": true
+                                                },
+                                                "width": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/slider/dimension/width",
+                                                    "required": true
+                                                }
+                                            }
+                                        },
+                                        "position": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/playerDefinition/controlBar/slider/position",
+                                            "required": true,
+                                            "properties": {
+                                                "x": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/slider/position/x",
+                                                    "required": true
+                                                },
+                                                "y": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/slider/position/y",
+                                                    "required": true
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "stopButton": {
+                                    "type": "object",
+                                    "id": "http://jsonschema.net/playerDefinition/controlBar/stopButton",
+                                    "required": false,
+                                    "properties": {
+                                        "dimension": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/playerDefinition/controlBar/stopButton/dimension",
+                                            "required": true,
+                                            "properties": {
+                                                "height": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/stopButton/dimension/height",
+                                                    "required": true
+                                                },
+                                                "width": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/stopButton/dimension/width",
+                                                    "required": true
+                                                }
+                                            }
+                                        },
+                                        "position": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/playerDefinition/controlBar/stopButton/position",
+                                            "required": true,
+                                            "properties": {
+                                                "x": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/stopButton/position/x",
+                                                    "required": true
+                                                },
+                                                "y": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/stopButton/position/y",
+                                                    "required": true
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "volumeBackground": {
+                                    "type": "object",
+                                    "id": "http://jsonschema.net/playerDefinition/controlBar/volumeBackground",
+                                    "required": false,
+                                    "properties": {
+                                        "dimension": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/playerDefinition/controlBar/volumeBackground/dimension",
+                                            "required": true,
+                                            "properties": {
+                                                "height": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/volumeBackground/dimension/height",
+                                                    "required": true
+                                                },
+                                                "width": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/volumeBackground/dimension/width",
+                                                    "required": true
+                                                }
+                                            }
+                                        },
+                                        "position": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/playerDefinition/controlBar/volumeBackground/position",
+                                            "required": true,
+                                            "properties": {
+                                                "x": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/volumeBackground/position/x",
+                                                    "required": true
+                                                },
+                                                "y": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/volumeBackground/position/y",
+                                                    "required": true
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "volume": {
+                                    "type": "object",
+                                    "id": "http://jsonschema.net/playerDefinition/controlBar/volume",
+                                    "required": false,
+                                    "properties": {
+                                        "dimension": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/playerDefinition/controlBar/volume/dimension",
+                                            "required": true,
+                                            "properties": {
+                                                "height": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/volume/dimension/height",
+                                                    "required": true
+                                                },
+                                                "width": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/volume/dimension/width",
+                                                    "required": true
+                                                }
+                                            }
+                                        },
+                                        "position": {
+                                            "type": "object",
+                                            "id": "http://jsonschema.net/playerDefinition/controlBar/volume/position",
+                                            "required": true,
+                                            "properties": {
+                                                "x": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/volume/position/x",
+                                                    "required": true
+                                                },
+                                                "y": {
+                                                    "type": "number",
+                                                    "id": "http://jsonschema.net/playerDefinition/controlBar/volume/position/y",
+                                                    "required": true
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "options": {
+                            "type": "object",
+                            "id": "http://jsonschema.net/playerDefinition/options",
+                            "required": true,
+                            "properties": {
+                                "autoplay": {
+                                    "type": "boolean",
+                                    "id": "http://jsonschema.net/playerDefinition/options/autoplay",
+                                    "required": true
+                                },
+                                "defaultQuality": {
+                                    "type": "string",
+                                    "id": "http://jsonschema.net/playerDefinition/options/defaultQuality",
+                                    "required": true
+                                },
+                                "responsive": {
+                                    "type": "boolean",
+                                    "id": "http://jsonschema.net/playerDefinition/options/responsive",
+                                    "required": true
+                                },
+                                "useHtmlFirst": {
+                                    "type": "boolean",
+                                    "id": "http://jsonschema.net/playerDefinition/options/useHtmlFirst",
+                                    "required": true
+                                }
+                            }
+                        },
+                        "skinUrl": {
+                            "type": "string",
+                            "id": "http://jsonschema.net/playerDefinition/skinUrl",
+                            "required": true
+                        }
+                    }
+                },
+                "stillSources": {
+                    "type": "object",
+                    "id": "http://jsonschema.net/stillSources",
+                    "required": true,
+                    "properties": {
+                        "480p": {
+                            "type": "string",
+                            "id": "http://jsonschema.net/stillSources/480p",
+                            "required": true
+                        }
+                    }
+                },
+                "videoSources": {
+                    "type": "object",
+                    "id": "http://jsonschema.net/videoSources",
+                    "required": true,
+                    "properties": {
+                        "flash": {
+                            "type": "object",
+                            "id": "http://jsonschema.net/videoSources/flash",
+                            "required": true,
+                            "properties": {}
+                        },
+                        "html": {
+                            "type": "object",
+                            "id": "http://jsonschema.net/videoSources/html",
+                            "required": true,
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        }
+    
+
