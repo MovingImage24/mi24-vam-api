@@ -135,11 +135,6 @@ A single Embed Code object with all its details
           "code": "<mi24-video video-id="74WGsUCJ3QJMjN8-LeYFpm" player-id="2" config-type="vmpro" url="//d.video-cdn.net"></mi24-video><script src="//e.video-cdn.net/elfriede.js"></script>"
         }
 
-
-
-
-
-
 # Group Statistics
 Hier können die verschienden Reports bezogen werden.
 
@@ -333,7 +328,7 @@ This creates a new Video-Manager
                               "y": 0
                           }
                         },
-                        "fullscreen": {
+                        "fullScreen": {
                           "dimension": {
                               "width": 100,
                               "height": 100
@@ -351,11 +346,11 @@ This creates a new Video-Manager
                           },
                           "button": {
                               "active": "fff000",
-                              "default": "fff000",
+                              "defaultColor": "fff000",
                               "hover": "fff000"
                           },
                           "background": {
-                              "default": "fff000"
+                              "defaultColor": "fff000"
                           }
                       }
                     }
@@ -996,7 +991,7 @@ Update plans (user, traffic and storage quota).
                         "y": 0
                     }
                 },                                       
-                "fullscreen": {
+                "fullScreen": {
                     "dimension": {
                         "width": 100,
                         "height": 100
@@ -1025,11 +1020,11 @@ Update plans (user, traffic and storage quota).
                     },
                     "button": {
                         "active": "fff000",
-                        "default": "fff000",
+                        "defaultColor": "fff000",
                         "hover": "fff000"
                     },
                     "background": {
-                        "default": "fff000"
+                        "defaultColor": "fff000"
                     }
                 }
             }
@@ -1139,7 +1134,7 @@ Update plans (user, traffic and storage quota).
                                 "id": "http://jsonschema.net/colors/background",
                                 "required": true,
                                 "properties": {
-                                    "default": {
+                                    "defaultColor": {
                                         "type": "string",
                                         "id": "http://jsonschema.net/colors/background/default",
                                         "required": true
@@ -1156,7 +1151,7 @@ Update plans (user, traffic and storage quota).
                                         "id": "http://jsonschema.net/colors/button/active",
                                         "required": true
                                     },
-                                    "default": {
+                                    "defaultColor": {
                                         "type": "string",
                                         "id": "http://jsonschema.net/colors/button/default",
                                         "required": true
@@ -1192,41 +1187,41 @@ Update plans (user, traffic and storage quota).
                             }
                         }
                     },
-                    "fullscreen": {
+                    "fullScreen": {
                         "type": "object",
-                        "id": "http://jsonschema.net/fullscreen",
+                        "id": "http://jsonschema.net/fullScreen",
                         "required": true,
                         "properties": {
                             "dimension": {
                                 "type": "object",
-                                "id": "http://jsonschema.net/fullscreen/dimension",
+                                "id": "http://jsonschema.net/fullScreen/dimension",
                                 "required": true,
                                 "properties": {
                                     "height": {
                                         "type": "number",
-                                        "id": "http://jsonschema.net/fullscreen/dimension/height",
+                                        "id": "http://jsonschema.net/fullScreen/dimension/height",
                                         "required": true
                                     },
                                     "width": {
                                         "type": "number",
-                                        "id": "http://jsonschema.net/fullscreen/dimension/width",
+                                        "id": "http://jsonschema.net/fullScreen/dimension/width",
                                         "required": true
                                     }
                                 }
                             },
                             "position": {
                                 "type": "object",
-                                "id": "http://jsonschema.net/fullscreen/position",
+                                "id": "http://jsonschema.net/fullScreen/position",
                                 "required": true,
                                 "properties": {
                                     "x": {
                                         "type": "number",
-                                        "id": "http://jsonschema.net/fullscreen/position/x",
+                                        "id": "http://jsonschema.net/fullScreen/position/x",
                                         "required": true
                                     },
                                     "y": {
                                         "type": "number",
-                                        "id": "http://jsonschema.net/fullscreen/position/y",
+                                        "id": "http://jsonschema.net/fullScreen/position/y",
                                         "required": true
                                     }
                                 }
