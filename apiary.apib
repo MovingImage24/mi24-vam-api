@@ -50,8 +50,6 @@ This create an new SERVICEOBJECT
 ### Delete SERVICEOBJECT [DELETE]
 + Response 204
 
-
-
 # Group Security
 
 ## Create token for api user [/auth/realms/VideoManagerPro/tokens/grants/access]
@@ -82,8 +80,6 @@ A list of all video objects in trashcan as an array of objects
           "id": 2, "title": "properties and values of video object needed"
         }]
 
-
-
 # Group Embed Types
 Embed Types related resources of the **VMPRO API**
 
@@ -102,7 +98,6 @@ A list of all Embed Types as an array of objects
           "id": "LINK_URL"
         }]
 
-
 # Group Player
 Player related resources of the **VMPRO API**
 
@@ -120,8 +115,6 @@ A list of all Players as an array of objects
         }, {
           "id": 2, "title": "Player green (APIARY)"
         }]
-
-
 
 # Group Embed Codes
 Embed Codes related resources of the **VMPRO API**
@@ -143,11 +136,6 @@ A single Embed Code object with all its details
           "id": "HTML_CODE",
           "code": "<mi24-video video-id="74WGsUCJ3QJMjN8-LeYFpm" player-id="2" config-type="vmpro" url="//d.video-cdn.net"></mi24-video><script src="//e.video-cdn.net/elfriede.js"></script>"
         }
-
-
-
-
-
 
 # Group Statistics
 Hier können die verschienden Reports bezogen werden.
@@ -177,7 +165,6 @@ Hier können die verschienden Reports bezogen werden.
             ]
         }
 
-
 ## Views [/vam/rest/vms/{videoManagerId}/statistics/report/views{?video-id,start-date,end-date}]
 + Parameters
     + videoManagerId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example value.
@@ -199,7 +186,6 @@ Hier können die verschienden Reports bezogen werden.
             }
         ]
 
-
 ## Plays [/vam/rest/vms/{videoManagerId}/statistics/report/plays{?video-id,start-date,end-date}]
 + Parameters
     + videoManagerId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example value.
@@ -220,7 +206,6 @@ Hier können die verschienden Reports bezogen werden.
                 "value": 8
             }
         ]
-
 
 # Group Video Manager
 Get, create or update Video-Managers
@@ -360,11 +345,11 @@ This creates a new Video-Manager
                           },
                           "button": {
                               "active": "fff000",
-                              "default": "fff000",
+                              "defaultColor": "fff000",
                               "hover": "fff000"
                           },
                           "background": {
-                              "default": "fff000"
+                              "defaultColor": "fff000"
                           }
                       }
                     }
@@ -1034,11 +1019,11 @@ Update plans (user, traffic and storage quota).
                     },
                     "button": {
                         "active": "fff000",
-                        "default": "fff000",
+                        "defaultColor": "fff000",
                         "hover": "fff000"
                     },
                     "background": {
-                        "default": "fff000"
+                        "defaultColor": "fff000"
                     }
                 }
             }
@@ -1148,7 +1133,7 @@ Update plans (user, traffic and storage quota).
                                 "id": "http://jsonschema.net/colors/background",
                                 "required": true,
                                 "properties": {
-                                    "default": {
+                                    "defaultColor": {
                                         "type": "string",
                                         "id": "http://jsonschema.net/colors/background/default",
                                         "required": true
@@ -1165,7 +1150,7 @@ Update plans (user, traffic and storage quota).
                                         "id": "http://jsonschema.net/colors/button/active",
                                         "required": true
                                     },
-                                    "default": {
+                                    "defaultColor": {
                                         "type": "string",
                                         "id": "http://jsonschema.net/colors/button/default",
                                         "required": true
@@ -1203,7 +1188,7 @@ Update plans (user, traffic and storage quota).
                     },
                     "fullScreen": {
                         "type": "object",
-                        "id": "http://jsonschema.net/v",
+                        "id": "http://jsonschema.net/fullScreen",
                         "required": true,
                         "properties": {
                             "dimension": {
