@@ -1400,20 +1400,29 @@ Details about the source file and a list of formats
         {
             "source": {
                 "downloadable": true,
+                "downloadUrl": "foo.bar",
                 "mimeType": "video/mp4",
                 "fileSize": 1024,
                 "container": "mov,...",
-                "videoCodec": "...",
-                "resolution": {
-                    "width": 144,
-                    "height": 108
+                "videoStream": {
+                    "frameRate": "25/1",
+                    "resolution": {
+                        "width": 144,
+                        "height": 108
+                    },
+                    "aspectRatio": {
+                        "width": 4,
+                        "height": 3
+                    },
+                    "codec": "h264",
+                    "bitRate": 413513
                 },
-                "bitRate": "",
-                "aspectRatio": {
-                    "width": 4,
-                    "height": 3
-                },
-                "frameRate": "25/1"
+                "audioStream": {
+                    "codec": "aac",
+                    "bitRate": 16513,
+                    "sampleRate": 51516,
+                    "channelLayout": "mono"
+                }
             },
             "formats": [
                 {
@@ -1423,7 +1432,8 @@ Details about the source file and a list of formats
                         "height": 108
                     },
                     "downloadUrl": "",
-                    "downloadable": true
+                    "downloadable": true,
+                    "uploadFinished" false
                 }
             ]
         }

@@ -50,10 +50,17 @@ This create an new SERVICEOBJECT
 ### Delete SERVICEOBJECT [DELETE]
 + Response 204
 
+# Group Security
 
+## Create token for api user [/auth/realms/VideoManagerPro/tokens/grants/access]
 
+### Create token [POST]
 
++ Request (application/x-www-form-urlencoded)
+        
+        client_id=CCC
 
++ Response 200
 
 # Group Trash Items
 Deleted video blah
@@ -73,8 +80,6 @@ A list of all video objects in trashcan as an array of objects
           "id": 2, "title": "properties and values of video object needed"
         }]
 
-
-
 # Group Embed Types
 Embed Types related resources of the **VMPRO API**
 
@@ -93,7 +98,6 @@ A list of all Embed Types as an array of objects
           "id": "LINK_URL"
         }]
 
-
 # Group Player
 Player related resources of the **VMPRO API**
 
@@ -111,8 +115,6 @@ A list of all Players as an array of objects
         }, {
           "id": 2, "title": "Player green (APIARY)"
         }]
-
-
 
 # Group Embed Codes
 Embed Codes related resources of the **VMPRO API**
@@ -163,7 +165,6 @@ Hier können die verschienden Reports bezogen werden.
             ]
         }
 
-
 ## Views [/vam/rest/vms/{videoManagerId}/statistics/report/views{?video-id,start-date,end-date}]
 + Parameters
     + videoManagerId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example value.
@@ -185,7 +186,6 @@ Hier können die verschienden Reports bezogen werden.
             }
         ]
 
-
 ## Plays [/vam/rest/vms/{videoManagerId}/statistics/report/plays{?video-id,start-date,end-date}]
 + Parameters
     + videoManagerId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example value.
@@ -206,7 +206,6 @@ Hier können die verschienden Reports bezogen werden.
                 "value": 8
             }
         ]
-
 
 # Group Video Manager
 Get, create or update Video-Managers
@@ -951,7 +950,7 @@ Update plans (user, traffic and storage quota).
                         "y": 0
                     }
                 },
-                "buttonSeperator": {
+                "buttonSeparator": {
                     "dimension": {
                         "width": 100,
                         "height": 100
@@ -1083,41 +1082,41 @@ Update plans (user, traffic and storage quota).
                             }
                         }
                     },
-                    "buttonSeperator": {
+                    "buttonSeparator": {
                         "type": "object",
-                        "id": "http://jsonschema.net/buttonSeperator",
+                        "id": "http://jsonschema.net/buttonSeparator",
                         "required": true,
                         "properties": {
                             "dimension": {
                                 "type": "object",
-                                "id": "http://jsonschema.net/buttonSeperator/dimension",
+                                "id": "http://jsonschema.net/buttonSeparator/dimension",
                                 "required": true,
                                 "properties": {
                                     "height": {
                                         "type": "number",
-                                        "id": "http://jsonschema.net/buttonSeperator/dimension/height",
+                                        "id": "http://jsonschema.net/buttonSeparator/dimension/height",
                                         "required": true
                                     },
                                     "width": {
                                         "type": "number",
-                                        "id": "http://jsonschema.net/buttonSeperator/dimension/width",
+                                        "id": "http://jsonschema.net/buttonSeparator/dimension/width",
                                         "required": true
                                     }
                                 }
                             },
                             "position": {
                                 "type": "object",
-                                "id": "http://jsonschema.net/buttonSeperator/position",
+                                "id": "http://jsonschema.net/buttonSeparator/position",
                                 "required": true,
                                 "properties": {
                                     "x": {
                                         "type": "number",
-                                        "id": "http://jsonschema.net/buttonSeperator/position/x",
+                                        "id": "http://jsonschema.net/buttonSeparator/position/x",
                                         "required": true
                                     },
                                     "y": {
                                         "type": "number",
-                                        "id": "http://jsonschema.net/buttonSeperator/position/y",
+                                        "id": "http://jsonschema.net/buttonSeparator/position/y",
                                         "required": true
                                     }
                                 }
