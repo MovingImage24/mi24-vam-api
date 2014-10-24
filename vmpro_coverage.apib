@@ -1,0 +1,32 @@
+FORMAT: 1A
+HOST: http://vmpro.eh.mi24.tv
+
+# VMPro
+VMPRO API is a *short texts saving* service similar to its physical paper presence on your table.
+
+# Group Statistics
+Hier können die verschienden Reports bezogen werden.
+
+## Coverage [/vam/rest/vms/{videoManagerId}/statistics/report/coverage{?video-id,start-date,end-date}]
++ Parameters
+    + videoManagerId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example value.
+    + video-id (required, string, `74WGsUCJ3QJMjN8-LeYFpm`) ... String `id` of the selected video to perform action with
+    + start-date (required, number, `1388530800000`) ... Numeric `value` of start date
+    + end-date (required, number, `1388530800000`) ... Numeric `value` of end date
+
+### Get statistics report for coverage [GET]
++ Response 200 (application/json)
+
+        {
+            "totalLength": 12000,
+            "data": [
+                {
+                    "timeStamp": 5000,
+                    "value": 5
+                },
+                {
+                    "timeStamp": 5000,
+                    "value": 3
+                }
+            ]
+        }

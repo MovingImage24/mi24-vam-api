@@ -1,0 +1,113 @@
+FORMAT: 1A
+HOST: http://vmpro.eh.mi24.tv
+
+# VMPro
+VMPRO API is a *short texts saving* service similar to its physical paper presence on your table.
+
+# Group Embed Codes
+Embed Codes related resources of the **VMPRO API**
+
+
+## Embed Code [/vam/rest/vms/{videoManagerId}/video/{videoId}/player/{playerId}/embedcode/{embedTypeId}]
+A single Embed Code object with all its details
+
++ Parameters
+    + videoManagerId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example value.
+    + videoId (required, string, `74WGsUCJ3QJMjN8-LeYFpm`) ... string `id` of the selected video to perform action with. Has example value.
+    + playerId (required, number, `2`) ... Numeric `id` of the Player to perform action with. Has example value.
+    + embedTypeId (required, string, `HTML_CODE`) ... string `id` of the Player to perform action with. Has example value.
+
+### Retrieve an Embed Code [GET]
++ Response 200 (application/json)
+
+        {
+          "id": "HTML_CODE",
+          "code": "<mi24-video video-id="74WGsUCJ3QJMjN8-LeYFpm" player-id="2" config-type="vmpro" url="//d.video-cdn.net"></mi24-video><script src="//e.video-cdn.net/elfriede.js"></script>"
+        }
+
+
+# Group Video List Items
+Video List
+
+## Video List Item Collection [/vam/rest/vms/{videoManagerId}/videos]
+A list of all video objects in the given video manager as an array of objects
+
++ Parameters
+    + videoManagerId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example
+    value.
+
+### List all Video List Items [GET]
++ Response 200 (application/json)
+
+    + body
+
+            [
+                {
+                    "id": "74WGsUCJ3QJMjN8-LeYFpm",
+                    "title": "the title of the video",
+                    "createdDate": 1388530800000,
+                    "modifiedDate": 1388530800000,
+                    "views": 3,
+                    "plays": 3,
+                    "duration": 5000,
+                    "stillUrl": "",
+                    "published": true
+                }
+            ]
+
+## Video File and Formats [/vam/rest/vms/{videoManagerId}/videos/{videoId}/file-and-formats]
+Details about the source file and a list of formats
+
++ Parameters
+    + videoManagerId (required, number, `2`) ... Numeric `id` of the video manager to perform action with. Has example
+    value.
+    + videoId (required, String, `74WGsUCJ3QJMjN8-LeYFpm`) ... `id` of the video (Base60 String).
+
+### Source and formats [GET]
++ Response 200 (application/json)
+
+    + body
+
+            {
+                "id": "74WGsUCJ3QJMjN8-LeYFpm",
+                "source": {
+                    "downloadable": true,
+                    "uploadFinished": true,
+                    "downloadUrl": "foo.bar",
+                    "mimeType": "video/mp4",
+                    "fileSize": 1024,
+                    "container": "mov,...",
+                    "videoStream": {
+                        "frameRate": "25/1",
+                        "resolution": {
+                            "width": 144,
+                            "height": 108
+                        },
+                        "aspectRatio": {
+                            "width": 4,
+                            "height": 3
+                        },
+                        "codec": "h264",
+                        "bitRate": 413513
+                    },
+                    "audioStream": {
+                        "codec": "aac",
+                        "bitRate": 16513,
+                        "sampleRate": 51516,
+                        "channelLayout": "mono"
+                    }
+                },
+                "formats": [
+                    {
+                        "id": "40",
+                        "profileKey": "baa256",
+                        "resolution": {
+                            "width": 144,
+                            "height": 108
+                        },
+                        "downloadUrl": "baar.foo",
+                        "downloadable": true,
+                        "uploadFinished": false
+                    }
+                ]
+            }
