@@ -1,0 +1,36 @@
+FORMAT: 1A
+HOST: http://vmpro.eh.mi24.tv
+
+# VMPro - Public API (Version 1) 
+
+## Get the channel tree for a videomanager [/rest/public/v1/vms/{videoManagerId}/channels]
+Get the channel tree for a videomanager from the public rest-api in version 1
+
++ Parameters
+    + videoManagerId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example value.
+
+### List all Trash Items [GET]
++ Response 200 (application/json)
+
+            {
+                "id": 2,
+                "name": "root_channel",
+                "children": [
+                    {
+                        "id": 3,
+                        "name": "level1A",
+                        "children": [
+                            {
+                                "id": 4,
+                                "name": "level2A",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 5,
+                        "name": "level1B",
+                        "children": []
+                    }
+                ]
+            }
