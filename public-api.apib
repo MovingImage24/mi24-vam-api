@@ -12,25 +12,45 @@ Get the channel tree for a videomanager from the public rest-api in version 1
 ### List all Trash Items [GET]
 + Response 200 (application/json)
 
-            {
-                "id": 2,
-                "name": "root_channel",
-                "children": [
-                    {
-                        "id": 3,
-                        "name": "level1A",
-                        "children": [
-                            {
-                                "id": 4,
-                                "name": "level2A",
-                                "children": []
-                            }
-                        ]
-                    },
-                    {
-                        "id": 5,
-                        "name": "level1B",
-                        "children": []
-                    }
-                ]
-            }
+        {
+            "id": 2,
+            "name": "root_channel",
+            "children": [
+                {
+                    "id": 3,
+                    "name": "level1A",
+                    "children": [
+                        {
+                            "id": 4,
+                            "name": "level2A",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "name": "level1B",
+                    "children": []
+                }
+            ]
+        }
+
+## Get Embed Code for a given Video [/rest/public/v1/vms/{videoManagerId}/video/{videoId}/embedCode{?playerSkinId}]
+
++ Parameters
+    + videoManagerId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example value.
+    + videoId (required, number, '4') ... Numeric 'id' of the Video to perform action with.
+    + playerSkinId (optional, number, '5') ... Numeric 'id' of the playerskin that should be used. if absent a default playerskin will be used
+
+
+### Get Embed Code for a given Video [GET]
++ Response 200 (application/json)
+
+        {
+            "embedCode" :"<html-player src='elfriedasf.js'...>"
+        }
+
+
+
+
+
