@@ -12,25 +12,45 @@ Get the channel tree for a videomanager from the public rest-api in version 1
 ### List all Trash Items [GET]
 + Response 200 (application/json)
 
-            {
-                "id": 2,
-                "name": "root_channel",
-                "children": [
-                    {
-                        "id": 3,
-                        "name": "level1A",
-                        "children": [
-                            {
-                                "id": 4,
-                                "name": "level2A",
-                                "children": []
-                            }
-                        ]
-                    },
-                    {
-                        "id": 5,
-                        "name": "level1B",
-                        "children": []
-                    }
-                ]
-            }
+        {
+            "id": 2,
+            "name": "root_channel",
+            "children": [
+                {
+                    "id": 3,
+                    "name": "level1A",
+                    "children": [
+                        {
+                            "id": 4,
+                            "name": "level2A",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "name": "level1B",
+                    "children": []
+                }
+            ]
+        }
+
+## Get Embed Code for a given Video [/rest/public/v1/vms/{videoManagerId}/video/{videoId}/embedCode{?playerSkinId}]
+
++ Parameters
+    + videoManagerId (required, number, `2`) ... Numeric `id` of the VideoManager to perform action with. Has example value.
+    + videoId (required, string, `74WGsUCJ3QJMjN8-LeYFpm`) ... string `id` of the selected video to perform action with. Has example value.
+    + playerSkinId (required, string, `74WGsUCJ3QJMjN8-LeYFpm`) ... string `id` of the playerskin that should be used. if absent a default playerskin will be used
+
+
+### Get Embed Code for a given Video [GET]
++ Response 200 (application/json)
+
+        {
+            "embedCode" :"<html-player src='elfriedasf.js'...>"
+        }
+
+
+
+
+
