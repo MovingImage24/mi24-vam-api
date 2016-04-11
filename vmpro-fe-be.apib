@@ -1469,3 +1469,39 @@ Details about the source file and a list of formats
                     }
                 ]
             }
+
+
+# Group Administration - Roles
+Administration - Role - related resources of the **VMPRO API**
+
+## Get User mapping for a specific Role [/vam/rest/vms/{videoManagerId}/roles/{roleId}/users]
+List of Users containing a flag if the given role is allocated to them.
+
++ Parameters
+    + videoManagerId (required, number, `2`) ... Numeric `id` of the video manager to perform action with. Has example 
+    value.
+    + roleId (required, number, `1`) ... `id` of the role.
+
+### Users for a specific Role [GET]
++ Response 200 (application/json)
+
+    [
+        {
+            "id": 434,
+            "firstName": "Anna",
+            "lastName": "Ampel",
+            "hasRole": false
+        },
+        {
+            "id": 435,
+            "firstName": "Karl",
+            "lastName": "Ranseier",
+            "hasRole": true
+        },
+        {
+            "id": 1337,
+            "firstName": "B0oM",
+            "lastName": "H3aD$ho7",
+            "hasRole": false
+        },
+    ]
